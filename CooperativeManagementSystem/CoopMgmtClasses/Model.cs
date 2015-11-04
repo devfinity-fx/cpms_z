@@ -91,17 +91,34 @@ namespace CoopManagement.Core
             Console.WriteLine("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID);
             object[] data = new object[] { };
             object[] cols = new object[] { };
-            using (MySqlDataReader reader = ConnectionManager.ExecuteQuery("SELECT * FROM {0} Where {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID))
+            FieldInfo[] fields = newInstance.GetType().GetFields();
+            using (MySqlDataReader reader = ConnectionManager.ExecuteQuery("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID))
             {
                 if(reader.Read())
                 {
+                    for(int i=0;i<fields.Length;i++)
+                    {
+                        object value; // inner scope
+                        if(fields[i].FieldType==typeof(DateTime))
+                        {
+                            value = reader.GetDateTime(fields[i].Name);
+                            newInstance.GetType().GetField(fields[i].Name).SetValue(newInstance, DateTime.Parse(value.ToString()));
 
+                        }
+                        else
+                        {
+                            value = reader.GetString(fields[i].Name);
+                            newInstance.GetType().GetField(fields[i].Name).SetValue(newInstance, value);
+                        }
+
+                    }
                 }
                 else
                 {
                     throw new NullReferenceException("No matching record(s) found");
                 }
             }
+
 
             foreach (FieldInfo f in newInstance.GetType().GetFields())
             {
@@ -156,7 +173,7 @@ namespace CoopManagement.Core
 
         public void Update()
         {
-            Console.WriteLine("UPDATE SET {0} WHERE {1};", UpdateValues, "ID=Shit");
+            Console.WriteLine("UPDATE SET {0} WHERE {1}='{2}';", UpdateValues, PrimaryKey, 10000);
         }
 
 
@@ -235,9 +252,7 @@ namespace CoopManagement.Core
         {
             return Convert.ChangeType(obj, type);
         }
-
-
-        }
+        
         //=============================================================================
     }
 
