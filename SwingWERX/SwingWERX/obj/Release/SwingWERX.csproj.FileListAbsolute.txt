@@ -1,0 +1,11 @@
+D:\C#\SwingWERX\SwingWERX\bin\Release\SwingWERX.dll
+D:\C#\SwingWERX\SwingWERX\bin\Release\SwingWERX.pdb
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.csprojResolveAssemblyReference.cache
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.Controls.FlatTabControl.resources
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.Controls.SwxButton.resources
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.Controls.InputBox.resources
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.Editors.ToolTipEditorForm.resources
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.Properties.Resources.resources
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.csproj.GenerateResource.Cache
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.dll
+D:\C#\SwingWERX\SwingWERX\obj\Release\SwingWERX.pdb

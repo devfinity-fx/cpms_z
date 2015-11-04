@@ -1,0 +1,8 @@
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\bin\Debug\libCoopMgmt.dll
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\bin\Debug\libCoopMgmt.pdb
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\bin\Debug\Newtonsoft.Json.dll
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\bin\Debug\Newtonsoft.Json.xml
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\obj\Debug\libCoopMgmt.dll
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\obj\Debug\libCoopMgmt.pdb
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\obj\Debug\CoopMgmtClasses.csprojResolveAssemblyReference.cache
+D:\DevBox\CooperativeManagementSystem\CoopMgmtClasses\bin\Debug\MySql.Data.dll

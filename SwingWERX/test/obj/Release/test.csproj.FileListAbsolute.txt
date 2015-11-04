@@ -1,0 +1,11 @@
+D:\C#\SwingWERX\test\bin\Release\test.exe.config
+D:\C#\SwingWERX\test\bin\Release\test.exe
+D:\C#\SwingWERX\test\bin\Release\test.pdb
+D:\C#\SwingWERX\test\bin\Release\SwingWERX.dll
+D:\C#\SwingWERX\test\bin\Release\SwingWERX.pdb
+D:\C#\SwingWERX\test\obj\Release\test.csprojResolveAssemblyReference.cache
+D:\C#\SwingWERX\test\obj\Release\test.Properties.Resources.resources
+D:\C#\SwingWERX\test\obj\Release\test.csproj.GenerateResource.Cache
+D:\C#\SwingWERX\test\obj\Release\test.exe
+D:\C#\SwingWERX\test\obj\Release\test.pdb
+D:\C#\SwingWERX\test\obj\Release\test.Form1.resources
