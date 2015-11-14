@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             this.separator1 = new SwingWERX.Controls.Separator();
             this.cmbGender = new Telerik.WinControls.UI.RadDropDownList();
             this.w8 = new Telerik.WinControls.Themes.Windows8Theme();
             this.pckBirthDate = new Telerik.WinControls.UI.RadDateTimePicker();
             this.pckJoinDate = new Telerik.WinControls.UI.RadDateTimePicker();
             this.cmbMemberType = new Telerik.WinControls.UI.RadDropDownList();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnReset = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -73,19 +73,19 @@
             // cmbGender
             // 
             this.cmbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbGender.DropDownHeight = 42;
+            this.cmbGender.DropDownHeight = 46;
             this.cmbGender.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cmbGender.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.cmbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            radListDataItem3.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            radListDataItem3.Height = 20;
-            radListDataItem3.Text = "Male";
-            radListDataItem4.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            radListDataItem4.Height = 20;
-            radListDataItem4.Text = "Female";
-            this.cmbGender.Items.Add(radListDataItem3);
-            this.cmbGender.Items.Add(radListDataItem4);
-            this.cmbGender.Location = new System.Drawing.Point(365, 208);
+            radListDataItem1.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            radListDataItem1.Height = 22;
+            radListDataItem1.Text = "Male";
+            radListDataItem2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            radListDataItem2.Height = 22;
+            radListDataItem2.Text = "Female";
+            this.cmbGender.Items.Add(radListDataItem1);
+            this.cmbGender.Items.Add(radListDataItem2);
+            this.cmbGender.Location = new System.Drawing.Point(337, 208);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.NullText = "- Select -";
             this.cmbGender.Size = new System.Drawing.Size(215, 31);
@@ -100,7 +100,7 @@
             this.pckBirthDate.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.pckBirthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.pckBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pckBirthDate.Location = new System.Drawing.Point(365, 250);
+            this.pckBirthDate.Location = new System.Drawing.Point(337, 250);
             this.pckBirthDate.Name = "pckBirthDate";
             this.pckBirthDate.Size = new System.Drawing.Size(215, 30);
             this.pckBirthDate.TabIndex = 17;
@@ -116,7 +116,7 @@
             this.pckJoinDate.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.pckJoinDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.pckJoinDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.pckJoinDate.Location = new System.Drawing.Point(365, 291);
+            this.pckJoinDate.Location = new System.Drawing.Point(337, 291);
             this.pckJoinDate.Name = "pckJoinDate";
             this.pckJoinDate.Size = new System.Drawing.Size(215, 30);
             this.pckJoinDate.TabIndex = 18;
@@ -128,19 +128,19 @@
             // cmbMemberType
             // 
             this.cmbMemberType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMemberType.DropDownHeight = 42;
+            this.cmbMemberType.DropDownHeight = 46;
             this.cmbMemberType.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.cmbMemberType.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.cmbMemberType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            radListDataItem5.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            radListDataItem5.Height = 20;
-            radListDataItem5.Text = "Regular";
-            radListDataItem6.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            radListDataItem6.Height = 20;
-            radListDataItem6.Text = "Associate";
-            this.cmbMemberType.Items.Add(radListDataItem5);
-            this.cmbMemberType.Items.Add(radListDataItem6);
-            this.cmbMemberType.Location = new System.Drawing.Point(365, 332);
+            radListDataItem3.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            radListDataItem3.Height = 22;
+            radListDataItem3.Text = "Regular";
+            radListDataItem4.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            radListDataItem4.Height = 22;
+            radListDataItem4.Text = "Associate";
+            this.cmbMemberType.Items.Add(radListDataItem3);
+            this.cmbMemberType.Items.Add(radListDataItem4);
+            this.cmbMemberType.Location = new System.Drawing.Point(337, 332);
             this.cmbMemberType.Name = "cmbMemberType";
             this.cmbMemberType.NullText = "- Select -";
             this.cmbMemberType.Size = new System.Drawing.Size(215, 31);
@@ -148,22 +148,23 @@
             this.cmbMemberType.Text = "- Select -";
             this.cmbMemberType.ThemeName = "Windows8";
             // 
-            // materialFlatButton1
+            // btnReset
             // 
-            this.materialFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F);
-            this.materialFlatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialFlatButton1.Location = new System.Drawing.Point(306, 485);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(132, 35);
-            this.materialFlatButton1.TabIndex = 27;
-            this.materialFlatButton1.Text = "Reset";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReset.Depth = 0;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F);
+            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
+            this.btnReset.Location = new System.Drawing.Point(278, 485);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnReset.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Primary = false;
+            this.btnReset.Size = new System.Drawing.Size(132, 35);
+            this.btnReset.TabIndex = 27;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.Reset_Action);
             // 
             // btnSave
             // 
@@ -171,8 +172,8 @@
             this.btnSave.Depth = 0;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(448, 485);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnSave.Location = new System.Drawing.Point(420, 485);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6, 7, 48, 7);
             this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSave.Name = "btnSave";
             this.btnSave.Primary = true;
@@ -188,7 +189,7 @@
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel8.Location = new System.Drawing.Point(15, 335);
+            this.materialLabel8.Location = new System.Drawing.Point(48, 335);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(51, 25);
@@ -201,7 +202,7 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel7.Location = new System.Drawing.Point(15, 294);
+            this.materialLabel7.Location = new System.Drawing.Point(48, 294);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(108, 25);
@@ -214,7 +215,7 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel6.Location = new System.Drawing.Point(15, 253);
+            this.materialLabel6.Location = new System.Drawing.Point(48, 253);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(116, 25);
@@ -227,7 +228,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel5.Location = new System.Drawing.Point(15, 211);
+            this.materialLabel5.Location = new System.Drawing.Point(48, 211);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(72, 25);
@@ -240,7 +241,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel4.Location = new System.Drawing.Point(15, 171);
+            this.materialLabel4.Location = new System.Drawing.Point(48, 171);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(123, 25);
@@ -254,7 +255,7 @@
             this.txtMiddleName.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.txtMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.txtMiddleName.Hint = "";
-            this.txtMiddleName.Location = new System.Drawing.Point(365, 168);
+            this.txtMiddleName.Location = new System.Drawing.Point(337, 168);
             this.txtMiddleName.MaxLength = 32767;
             this.txtMiddleName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMiddleName.Name = "txtMiddleName";
@@ -274,7 +275,7 @@
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.txtFirstName.Hint = "";
-            this.txtFirstName.Location = new System.Drawing.Point(365, 130);
+            this.txtFirstName.Location = new System.Drawing.Point(337, 130);
             this.txtFirstName.MaxLength = 32767;
             this.txtFirstName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtFirstName.Name = "txtFirstName";
@@ -293,7 +294,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel3.Location = new System.Drawing.Point(15, 133);
+            this.materialLabel3.Location = new System.Drawing.Point(48, 133);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(100, 25);
@@ -307,7 +308,7 @@
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.txtLastName.Hint = "";
-            this.txtLastName.Location = new System.Drawing.Point(365, 92);
+            this.txtLastName.Location = new System.Drawing.Point(337, 92);
             this.txtLastName.MaxLength = 32767;
             this.txtLastName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtLastName.Name = "txtLastName";
@@ -326,7 +327,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel2.Location = new System.Drawing.Point(15, 95);
+            this.materialLabel2.Location = new System.Drawing.Point(48, 95);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(100, 25);
@@ -340,7 +341,7 @@
             this.lblMemberNo.Depth = 0;
             this.lblMemberNo.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.lblMemberNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.lblMemberNo.Location = new System.Drawing.Point(360, 58);
+            this.lblMemberNo.Location = new System.Drawing.Point(331, 58);
             this.lblMemberNo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMemberNo.Name = "lblMemberNo";
             this.lblMemberNo.Size = new System.Drawing.Size(66, 25);
@@ -354,7 +355,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.materialLabel1.Location = new System.Drawing.Point(15, 55);
+            this.materialLabel1.Location = new System.Drawing.Point(48, 55);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(104, 25);
@@ -366,7 +367,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.Controls.Add(this.materialFlatButton1);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbMemberType);
             this.Controls.Add(this.materialLabel8);
@@ -418,6 +419,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private Telerik.WinControls.UI.RadDropDownList cmbMemberType;
         private MaterialSkin.Controls.MaterialRaisedButton btnSave;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialFlatButton btnReset;
     }
 }

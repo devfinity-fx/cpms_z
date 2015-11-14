@@ -41,11 +41,12 @@ namespace CoopManagement
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
 
+            /*
             User user = User.Find<User>(10000);
             Console.WriteLine("Password Before Change: {0}", user.Password);
             user.Password = "changedpass";
             user.Update();
-
+            */
 
             //User.Where(Model.Param("Shit", 1)).Where(Model.Param("key","2012-04-24"));
 

@@ -15,20 +15,15 @@ namespace CoopManagement.Controls
     public partial class MemberCreate : UserControl
     {
         private DateTime DefaultDoB;
-        private DateTime DefaultJoin;
         public MemberCreate()
         {
             InitializeComponent();
             DefaultDoB = pckBirthDate.Value;
-            //DefaultJoin = pckJoinDate.Value;
         }
 
         private void LoadEvent(object sender, EventArgs e)
         {
-            this.ActiveControl = lblMemberNo;
-            pckJoinDate.Value = DateTime.Now;
-
-            lblMemberNo.Text = String.Format("{0}",Member.Last<Member>().Get<Member>()[0].MemberID).PadLeft(5, '0');
+            DoReset();
         }
 
         private void Save_Action(object sender, EventArgs e)
@@ -38,7 +33,6 @@ namespace CoopManagement.Controls
                 !String.IsNullOrEmpty(txtMiddleName.Text) &&
                 cmbGender.SelectedIndex >= 0 &&
                 pckBirthDate.Value != DefaultDoB && 
-                // pckJoinDate.Value != DefaultJoin && // checking removed.
                 cmbMemberType.SelectedIndex >=0
                 )
             {
@@ -56,8 +50,34 @@ namespace CoopManagement.Controls
                     MessageBox.Show(this, "You have successfully added a new member.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else
+            {
+                MessageBox.Show(this, "Please fill up all required fields.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
-            
+        private void Reset_Action(object sender, EventArgs e)
+        {
+            DoReset();
+        }
+
+        public void DoReset()
+        {
+            this.ActiveControl = lblMemberNo;
+            pckJoinDate.Value = DateTime.Now;
+
+            int LastID = Member.Last<Member>().Get<Member>()[0].MemberID;
+
+            lblMemberNo.Text = String.Format("{0}", LastID + 1).PadLeft(5, '0');
+            txtFirstName.Clear();
+            txtMiddleName.Clear();
+            txtLastName.Clear();
+            cmbGender.SelectedIndex = -1;
+            cmbGender.Text = "- Select -";
+            cmbMemberType.SelectedIndex = -1;
+            cmbMemberType.Text = "- Select -";
+            pckJoinDate.Value = DateTime.Today;
+            pckBirthDate.Value = DefaultDoB;
         }
     }
 }
