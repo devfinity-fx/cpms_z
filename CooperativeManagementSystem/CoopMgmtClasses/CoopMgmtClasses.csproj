@@ -49,6 +49,7 @@
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

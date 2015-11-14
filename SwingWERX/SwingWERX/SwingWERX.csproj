@@ -114,6 +114,9 @@
     <Compile Include="Controls\Popup\Popup.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\RichInputBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Separator.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,6 +199,7 @@
     <Compile Include="ToolStripOverride.cs" />
     <Compile Include="Utils\Compression.cs" />
     <Compile Include="Utils\IniFile.cs" />
+    <Compile Include="Utils\PasswordHash.cs" />
     <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>

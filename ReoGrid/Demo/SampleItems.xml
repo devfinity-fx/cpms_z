@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<SampleGroups>
+  <Group Name="Document">
+    
+  </Group>
+  <Group Name="Cells">
+    <Item Type="MergeCells"></Item>
+    
+  </Group>
+  <SampleGroup Name="Events">
+    <SampleItem Type="ClipboardEvent"/>
+  </SampleGroup>
+</SampleGroups>

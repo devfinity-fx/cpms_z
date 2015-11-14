@@ -63,9 +63,39 @@ namespace CoopManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajamiscosa {
+            get {
+                object obj = ResourceManager.GetObject("ajamiscosa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon coop {
+            get {
+                object obj = ResourceManager.GetObject("coop", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disbursement {
             get {
                 object obj = ResourceManager.GetObject("disbursement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eraazana {
+            get {
+                object obj = ResourceManager.GetObject("eraazana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

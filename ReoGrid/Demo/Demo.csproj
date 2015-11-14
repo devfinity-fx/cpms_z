@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99F06745-743B-4B54-AFC8-30CC295B717B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>unvell.ReoGrid.Demo</RootNamespace>
+    <AssemblyName>ReoGridDemo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EX_SCRIPT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;EX_SCRIPT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Minimum|AnyCPU' ">
+    <OutputPath>bin\Minimum\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="unvell.ReoScript">
+      <HintPath>..\Ref\unvell.ReoScript.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomCells\BuiltInTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCells\BuiltInTypesForm.Designer.cs">
+      <DependentUpon>BuiltInTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\AnimationCellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCells\AnimationCellForm.Designer.cs">
+      <DependentUpon>AnimationCellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\NumericProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCells\NumericProgressForm.Designer.cs">
+      <DependentUpon>NumericProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\SlideCellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCells\SlideCellForm.Designer.cs">
+      <DependentUpon>SlideCellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SortDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\SortDataForm.Designer.cs">
+      <DependentUpon>SortDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Designer.cs">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoForm.Designer.cs">
+      <DependentUpon>DemoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DropdownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Features\ClipboardEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\ClipboardEvent.Designer.cs">
+      <DependentUpon>ClipboardEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ClipboardEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ClipboardEventForm.Designer.cs">
+      <DependentUpon>ClipboardEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CellsEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\CellsEventForm.Designer.cs">
+      <DependentUpon>CellsEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LargeDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\LargeDataForm.Designer.cs">
+      <DependentUpon>LargeDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\OutlineWithFreezeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\OutlineWithFreezeForm.Designer.cs">
+      <DependentUpon>OutlineWithFreezeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\PickRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\PickRangeForm.Designer.cs">
+      <DependentUpon>PickRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ZoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\ZoomForm.Designer.cs">
+      <DependentUpon>ZoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridForm.Designer.cs">
+      <DependentUpon>GridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MaximumGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MaximumGridForm.Designer.cs">
+      <DependentUpon>MaximumGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MostComplexViewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MostComplexViewsForm.Designer.cs">
+      <DependentUpon>MostComplexViewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomCells\BuiltInTypesForm.resx">
+      <DependentUpon>BuiltInTypesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCells\AnimationCellForm.resx">
+      <DependentUpon>AnimationCellForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCells\NumericProgressForm.resx">
+      <DependentUpon>NumericProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCells\SlideCellForm.resx">
+      <DependentUpon>SlideCellForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\SortDataForm.resx">
+      <DependentUpon>SortDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.resx">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoForm.resx">
+      <DependentUpon>DemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ClipboardEvent.resx">
+      <DependentUpon>ClipboardEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ClipboardEventForm.resx">
+      <DependentUpon>ClipboardEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\CellsEventForm.resx">
+      <DependentUpon>CellsEventForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\LargeDataForm.resx">
+      <DependentUpon>LargeDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\OutlineWithFreezeForm.resx">
+      <DependentUpon>OutlineWithFreezeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\PickRangeForm.resx">
+      <DependentUpon>PickRangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\ZoomForm.resx">
+      <DependentUpon>ZoomForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridForm.resx">
+      <DependentUpon>GridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MaximumGridForm.resx">
+      <DependentUpon>MaximumGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MostComplexViewsForm.resx">
+      <DependentUpon>MostComplexViewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\DataFormatForm.resx">
+      <DependentUpon>DataFormatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\MergeCellsForm.resx">
+      <DependentUpon>MergeCellsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\OnlyNumberInputForm.resx">
+      <DependentUpon>OnlyNumberInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\SetEditableRangeForm.resx">
+      <DependentUpon>SetEditableRangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\AddCustomizeFunctionForm.resx">
+      <DependentUpon>AddCustomizeFunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\HandleEventsForm.resx">
+      <DependentUpon>HandleEventsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RunScriptForm.resx">
+      <DependentUpon>RunScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScritpDemoForm.resx">
+      <DependentUpon>ScritpDemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Features\DataFormatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\DataFormatForm.Designer.cs">
+      <DependentUpon>DataFormatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\MergeCellsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\MergeCellsForm.Designer.cs">
+      <DependentUpon>MergeCellsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\OnlyNumberInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\OnlyNumberInputForm.Designer.cs">
+      <DependentUpon>OnlyNumberInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SetEditableRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\SetEditableRangeForm.Designer.cs">
+      <DependentUpon>SetEditableRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\AddCustomizeFunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\AddCustomizeFunctionForm.Designer.cs">
+      <DependentUpon>AddCustomizeFunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\HandleEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\HandleEventsForm.Designer.cs">
+      <DependentUpon>HandleEventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\RunScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\RunScriptForm.Designer.cs">
+      <DependentUpon>RunScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScritpDemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScritpDemoForm.Designer.cs">
+      <DependentUpon>ScritpDemoForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EditorLib\EditorLib.csproj">
+      <Project>{ee03a6af-2937-4893-80f4-dd71f099a76c}</Project>
+      <Name>EditorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReoGrid\ReoGrid.csproj">
+      <Project>{8b62357a-abbc-4db0-8633-f1d6a6c1ea53}</Project>
+      <Name>ReoGrid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\computer_laptop.png" />
+    <Content Include="Resources\loading.gif" />
+    <Content Include="SampleItems.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

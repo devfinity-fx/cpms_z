@@ -1,0 +1,5 @@
+﻿// 'grid' is predefined global object of control instance 
+//
+
+grid.getCell("A1").data = 'hello';
+grid.getCell(0, 1).data = 'world';

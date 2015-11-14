@@ -32,6 +32,15 @@
             this.wrapper = new SwingWERX.Controls.SwxPanel();
             this.content = new SwingWERX.Controls.SwxPanel();
             this.contentManager = new SwingWERX.Controls.PanelManager();
+            this.p0_Home = new SwingWERX.Controls.ManagedPanel();
+            this.p1_Verifier = new SwingWERX.Controls.ManagedPanel();
+            this.p2_CashCollection = new SwingWERX.Controls.ManagedPanel();
+            this.p3_CashDisbursement = new SwingWERX.Controls.ManagedPanel();
+            this.p4_JournalVoucher = new SwingWERX.Controls.ManagedPanel();
+            this.p5_GeneralLedger = new SwingWERX.Controls.ManagedPanel();
+            this.p6_SubsidiaryLedger = new SwingWERX.Controls.ManagedPanel();
+            this.p7_SetupComputations = new SwingWERX.Controls.ManagedPanel();
+            this.p8_Utilities = new SwingWERX.Controls.ManagedPanel();
             this.navigation = new SwingWERX.Controls.SwxPanel();
             this.stripButton0 = new SwingWERX.Controls.StripButton();
             this.stripButton6 = new SwingWERX.Controls.StripButton();
@@ -44,15 +53,6 @@
             this.stripButton1 = new SwingWERX.Controls.StripButton();
             this.title = new SwingWERX.Controls.SwxPanel();
             this.swxPanel1 = new SwingWERX.Controls.SwxPanel();
-            this.p0_Home = new SwingWERX.Controls.ManagedPanel();
-            this.p1_Verifier = new SwingWERX.Controls.ManagedPanel();
-            this.p2_CashCollection = new SwingWERX.Controls.ManagedPanel();
-            this.p3_CashDisbursement = new SwingWERX.Controls.ManagedPanel();
-            this.p4_JournalVoucher = new SwingWERX.Controls.ManagedPanel();
-            this.p5_GeneralLedger = new SwingWERX.Controls.ManagedPanel();
-            this.p6_SubsidiaryLedger = new SwingWERX.Controls.ManagedPanel();
-            this.p7_SetupComputations = new SwingWERX.Controls.ManagedPanel();
-            this.p8_Utilities = new SwingWERX.Controls.ManagedPanel();
             this.wrapper.SuspendLayout();
             this.content.SuspendLayout();
             this.contentManager.SuspendLayout();
@@ -107,6 +107,68 @@
             this.contentManager.SelectedPanel = this.p0_Home;
             this.contentManager.Size = new System.Drawing.Size(600, 540);
             this.contentManager.TabIndex = 0;
+            // 
+            // p0_Home
+            // 
+            this.p0_Home.Location = new System.Drawing.Point(0, 0);
+            this.p0_Home.Name = "p0_Home";
+            this.p0_Home.Size = new System.Drawing.Size(600, 540);
+            // 
+            // p1_Verifier
+            // 
+            this.p1_Verifier.Location = new System.Drawing.Point(0, 0);
+            this.p1_Verifier.Name = "p1_Verifier";
+            this.p1_Verifier.Size = new System.Drawing.Size(0, 0);
+            this.p1_Verifier.Text = "managedPanel3";
+            // 
+            // p2_CashCollection
+            // 
+            this.p2_CashCollection.Location = new System.Drawing.Point(0, 0);
+            this.p2_CashCollection.Name = "p2_CashCollection";
+            this.p2_CashCollection.Size = new System.Drawing.Size(0, 0);
+            this.p2_CashCollection.Text = "managedPanel3";
+            // 
+            // p3_CashDisbursement
+            // 
+            this.p3_CashDisbursement.Location = new System.Drawing.Point(0, 0);
+            this.p3_CashDisbursement.Name = "p3_CashDisbursement";
+            this.p3_CashDisbursement.Size = new System.Drawing.Size(0, 0);
+            this.p3_CashDisbursement.Text = "managedPanel3";
+            // 
+            // p4_JournalVoucher
+            // 
+            this.p4_JournalVoucher.Location = new System.Drawing.Point(0, 0);
+            this.p4_JournalVoucher.Name = "p4_JournalVoucher";
+            this.p4_JournalVoucher.Size = new System.Drawing.Size(0, 0);
+            this.p4_JournalVoucher.Text = "managedPanel3";
+            // 
+            // p5_GeneralLedger
+            // 
+            this.p5_GeneralLedger.Location = new System.Drawing.Point(0, 0);
+            this.p5_GeneralLedger.Name = "p5_GeneralLedger";
+            this.p5_GeneralLedger.Size = new System.Drawing.Size(0, 0);
+            this.p5_GeneralLedger.Text = "managedPanel3";
+            // 
+            // p6_SubsidiaryLedger
+            // 
+            this.p6_SubsidiaryLedger.Location = new System.Drawing.Point(0, 0);
+            this.p6_SubsidiaryLedger.Name = "p6_SubsidiaryLedger";
+            this.p6_SubsidiaryLedger.Size = new System.Drawing.Size(0, 0);
+            this.p6_SubsidiaryLedger.Text = "managedPanel3";
+            // 
+            // p7_SetupComputations
+            // 
+            this.p7_SetupComputations.Location = new System.Drawing.Point(0, 0);
+            this.p7_SetupComputations.Name = "p7_SetupComputations";
+            this.p7_SetupComputations.Size = new System.Drawing.Size(0, 0);
+            this.p7_SetupComputations.Text = "managedPanel3";
+            // 
+            // p8_Utilities
+            // 
+            this.p8_Utilities.Location = new System.Drawing.Point(0, 0);
+            this.p8_Utilities.Name = "p8_Utilities";
+            this.p8_Utilities.Size = new System.Drawing.Size(0, 0);
+            this.p8_Utilities.Text = "managedPanel3";
             // 
             // navigation
             // 
@@ -375,68 +437,6 @@
             this.swxPanel1.TabIndex = 5;
             this.swxPanel1.Text = "     Coop Management System";
             this.swxPanel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // p0_Home
-            // 
-            this.p0_Home.Location = new System.Drawing.Point(0, 0);
-            this.p0_Home.Name = "p0_Home";
-            this.p0_Home.Size = new System.Drawing.Size(600, 540);
-            // 
-            // p1_Verifier
-            // 
-            this.p1_Verifier.Location = new System.Drawing.Point(0, 0);
-            this.p1_Verifier.Name = "p1_Verifier";
-            this.p1_Verifier.Size = new System.Drawing.Size(600, 540);
-            this.p1_Verifier.Text = "managedPanel3";
-            // 
-            // p2_CashCollection
-            // 
-            this.p2_CashCollection.Location = new System.Drawing.Point(0, 0);
-            this.p2_CashCollection.Name = "p2_CashCollection";
-            this.p2_CashCollection.Size = new System.Drawing.Size(600, 540);
-            this.p2_CashCollection.Text = "managedPanel3";
-            // 
-            // p3_CashDisbursement
-            // 
-            this.p3_CashDisbursement.Location = new System.Drawing.Point(0, 0);
-            this.p3_CashDisbursement.Name = "p3_CashDisbursement";
-            this.p3_CashDisbursement.Size = new System.Drawing.Size(600, 540);
-            this.p3_CashDisbursement.Text = "managedPanel3";
-            // 
-            // p4_JournalVoucher
-            // 
-            this.p4_JournalVoucher.Location = new System.Drawing.Point(0, 0);
-            this.p4_JournalVoucher.Name = "p4_JournalVoucher";
-            this.p4_JournalVoucher.Size = new System.Drawing.Size(600, 540);
-            this.p4_JournalVoucher.Text = "managedPanel3";
-            // 
-            // p5_GeneralLedger
-            // 
-            this.p5_GeneralLedger.Location = new System.Drawing.Point(0, 0);
-            this.p5_GeneralLedger.Name = "p5_GeneralLedger";
-            this.p5_GeneralLedger.Size = new System.Drawing.Size(600, 540);
-            this.p5_GeneralLedger.Text = "managedPanel3";
-            // 
-            // p6_SubsidiaryLedger
-            // 
-            this.p6_SubsidiaryLedger.Location = new System.Drawing.Point(0, 0);
-            this.p6_SubsidiaryLedger.Name = "p6_SubsidiaryLedger";
-            this.p6_SubsidiaryLedger.Size = new System.Drawing.Size(600, 540);
-            this.p6_SubsidiaryLedger.Text = "managedPanel3";
-            // 
-            // p7_SetupComputations
-            // 
-            this.p7_SetupComputations.Location = new System.Drawing.Point(0, 0);
-            this.p7_SetupComputations.Name = "p7_SetupComputations";
-            this.p7_SetupComputations.Size = new System.Drawing.Size(600, 540);
-            this.p7_SetupComputations.Text = "managedPanel3";
-            // 
-            // p8_Utilities
-            // 
-            this.p8_Utilities.Location = new System.Drawing.Point(0, 0);
-            this.p8_Utilities.Name = "p8_Utilities";
-            this.p8_Utilities.Size = new System.Drawing.Size(600, 540);
-            this.p8_Utilities.Text = "managedPanel3";
             // 
             // Main
             // 

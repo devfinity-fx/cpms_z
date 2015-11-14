@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <rows>20</rows>
+    <cols>20</cols>
+    <freeze-row>0</freeze-row>
+    <freeze-col>0</freeze-col>
+    <settings show-grid="true" />
+    <culture>en-US</culture>
+    <editor>ReoGrid Editor 0.8.2</editor>
+    <script>var matrix = 20;
+
+grid.rows = matrix;
+grid.cols = matrix;
+
+for(var i=0; i&lt;grid.rows; i++) {
+  grid.getRow(i).height = 20;
+  grid.getCol(i).width = 20;
+}
+
+var colors = ['#ee0000', 'lightgreen', 'blue', 'orange', 'pink', 'skyblue', 'cyan', 'darkdim', 'black'];
+
+var cc = 0;
+
+function run() {
+  // get a pos pos randomly
+  var r = Math.floor( Math.random() * grid.rows );
+  var c = Math.floor( Math.random() * grid.cols );
+  
+  // set background color for the cell
+  grid.getCell(r, c).style.backgroundColor = colors[cc];
+
+  // log info
+  console.log('change color to: ' + colors[cc]);
+
+  // next color
+  cc++;
+  if (cc &gt; colors.length - 1) cc = 0;
+}
+
+// loop to set color
+setInterval(run, 50);
+</script>
+  </head>
+  <style bgcolor="none" color="Black" font="MS UI Gothic" font-size="9" align="general" valign="middle" />
+  <rows />
+  <cols>
+    <col col="0" width="20" />
+    <col col="1" width="20" />
+    <col col="2" width="20" />
+    <col col="3" width="20" />
+    <col col="4" width="20" />
+    <col col="5" width="20" />
+    <col col="6" width="20" />
+    <col col="7" width="20" />
+    <col col="8" width="20" />
+    <col col="9" width="20" />
+    <col col="10" width="20" />
+    <col col="11" width="20" />
+    <col col="12" width="20" />
+    <col col="13" width="20" />
+    <col col="14" width="20" />
+    <col col="15" width="20" />
+    <col col="16" width="20" />
+    <col col="17" width="20" />
+    <col col="18" width="20" />
+    <col col="19" width="20" />
+  </cols>
+  <v-borders />
+  <h-borders />
+  <cells />
+</grid>

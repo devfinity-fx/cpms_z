@@ -1,0 +1,13 @@
+D:\DevBox\ReoGrid\Editor\bin\Debug\ReoGridEditor.exe
+D:\DevBox\ReoGrid\Editor\bin\Debug\ReoGridEditor.pdb
+D:\DevBox\ReoGrid\Editor\bin\Debug\Antlr3.Runtime.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\FastColoredTextBox.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoGrid.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoGridEditor.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoScript.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoScript.EditorLib.dll
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoGridEditor.pdb
+D:\DevBox\ReoGrid\Editor\bin\Debug\unvell.ReoGrid.pdb
+D:\DevBox\ReoGrid\Editor\obj\Debug\Editor.csprojResolveAssemblyReference.cache
+D:\DevBox\ReoGrid\Editor\obj\Debug\ReoGridEditor.exe
+D:\DevBox\ReoGrid\Editor\obj\Debug\ReoGridEditor.pdb

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using CoopManagement.Classes;
 using CoopManagement.Models;
+using CoopManagement.Core;
 
 using SwingWERX.Controls;
 
@@ -31,6 +32,7 @@ namespace CoopManagement
             navButtons.Add(stripButton6);
             navButtons.Add(stripButton7);
             navButtons.Add(stripButton8);
+
         }
 
         private void LoadEvent(object sender, EventArgs e)
@@ -39,18 +41,26 @@ namespace CoopManagement
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
 
-            User user = User.Find<User>("shit");
+            User user = User.Find<User>(10000);
+            Console.WriteLine("Password Before Change: {0}", user.Password);
+            user.Password = "changedpass";
+            user.Update();
 
-            User usr = new User();
-            /*usr.UserID = "2012-1030F";
+
+            //User.Where(Model.Param("Shit", 1)).Where(Model.Param("key","2012-04-24"));
+
+
+
+            /*User usr = new User();
+            /usr.UserID = "2012-1030F";
             usr.Username = "ajamiscosa";
             usr.Password = "9951354a";
             usr.LastName = "Amiscosa";
             usr.FirstName = "Aron Jhed";
             usr.MiddleName = "Bautista";*/
-            usr.DateOfBirth = DateTime.Parse("1992-04-24");
-            usr.Age = 10;
-            usr.Update();
+            //usr.DateOfBirth = DateTime.Parse("1992-04-24");
+            //usr.Update();
+            Console.WriteLine(contentManager.Size);
         }
 
         private void ClickEvent(object sender, EventArgs e)

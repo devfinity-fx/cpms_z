@@ -8,3 +8,14 @@ D:\C#\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Properties.Resources.resources
 D:\C#\SwingWERX\SwingWERX\obj\Debug\SwingWERX.csproj.GenerateResource.Cache
 D:\C#\SwingWERX\SwingWERX\obj\Debug\SwingWERX.dll
 D:\C#\SwingWERX\SwingWERX\obj\Debug\SwingWERX.pdb
+D:\DevBox\SwingWERX\SwingWERX\bin\Debug\SwingWERX.dll
+D:\DevBox\SwingWERX\SwingWERX\bin\Debug\SwingWERX.pdb
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.csprojResolveAssemblyReference.cache
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Controls.FlatTabControl.resources
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Controls.SwxButton.resources
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Controls.InputBox.resources
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Editors.ToolTipEditorForm.resources
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.Properties.Resources.resources
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.csproj.GenerateResource.Cache
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.dll
+D:\DevBox\SwingWERX\SwingWERX\obj\Debug\SwingWERX.pdb

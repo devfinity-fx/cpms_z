@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<grid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <head>
+    <default-row-height>20</default-row-height>
+    <default-col-width>70</default-col-width>
+    <rows>203</rows>
+    <cols>100</cols>
+    <freeze-row>0</freeze-row>
+    <freeze-col>0</freeze-col>
+    <settings show-grid="false" />
+    <culture>en-US</culture>
+    <editor>ReoGrid Editor 0.8.2</editor>
+    <script />
+  </head>
+  <style bgcolor="none" color="Black" font="Arial" font-size="9" align="general" valign="middle" />
+  <rows>
+    <row row="1" height="41" />
+    <row row="3" height="15" />
+    <row row="4" height="15" />
+    <row row="5" height="15" />
+    <row row="6" height="15" />
+    <row row="7" height="15" />
+    <row row="8" height="15" />
+    <row row="9" height="15" />
+    <row row="10" height="15" />
+    <row row="11" height="15" />
+    <row row="12" height="15" />
+    <row row="13" height="15" />
+    <row row="14" height="15" />
+    <row row="15" height="15" />
+    <row row="16" height="15" />
+    <row row="19" height="29" />
+  </rows>
+  <cols>
+    <col col="0" width="40" />
+  </cols>
+  <v-borders>
+    <v-border row="3" col="1" color="Black" style="Solid" pos="left" rows="2" />
+    <v-border row="6" col="1" color="Black" style="BoldSolid" pos="left" rows="2" />
+    <v-border row="9" col="1" color="Black" style="BoldSolidStrong" pos="left" rows="2" />
+    <v-border row="12" col="1" color="Black" style="DoubleLine" pos="left" rows="2" />
+    <v-border row="3" col="4" color="Black" style="Solid" pos="right" rows="2" />
+    <v-border row="6" col="4" color="Black" style="BoldSolid" pos="right" rows="2" />
+    <v-border row="9" col="4" color="Black" style="BoldSolidStrong" pos="right" rows="2" />
+    <v-border row="12" col="4" color="Black" style="DoubleLine" pos="right" rows="2" />
+    <v-border row="3" col="5" color="Black" style="Dotted" pos="left" rows="2" />
+    <v-border row="6" col="5" color="Black" style="Dashed" pos="left" rows="2" />
+    <v-border row="9" col="5" color="Black" style="Dashed2" pos="left" rows="2" />
+    <v-border row="12" col="5" color="Black" style="BoldDotted" pos="left" rows="2" />
+    <v-border row="20" col="5" color="#0000ff" style="Dashed" pos="left" rows="4" />
+    <v-border row="20" col="6" color="#0000ff" style="Dashed" pos="left" rows="4" />
+    <v-border row="20" col="7" color="#0000ff" style="Dashed" pos="all" rows="4" />
+    <v-border row="3" col="8" color="Black" style="Dotted" pos="right" rows="2" />
+    <v-border row="6" col="8" color="Black" style="Dashed" pos="right" rows="2" />
+    <v-border row="9" col="8" color="Black" style="Dashed2" pos="right" rows="2" />
+    <v-border row="12" col="8" color="Black" style="BoldDotted" pos="right" rows="2" />
+    <v-border row="20" col="8" color="#0000ff" style="Dashed" pos="right" rows="4" />
+    <v-border row="3" col="9" color="Black" style="Dashed2242" pos="left" rows="2" />
+    <v-border row="6" col="9" color="Black" style="BoldDashed224" pos="left" rows="2" />
+    <v-border row="9" col="9" color="Black" style="BoldDashed211" pos="left" rows="2" />
+    <v-border row="12" col="9" color="Black" style="BoldDashed211" pos="left" rows="2" />
+    <v-border row="15" col="9" color="Black" style="BoldDashed31" pos="left" rows="2" />
+    <v-border row="20" col="10" color="#ff00ff" style="Dotted" pos="all" rows="4" />
+    <v-border row="20" col="11" color="#ff00ff" style="Dotted" pos="all" rows="4" />
+    <v-border row="3" col="12" color="Black" style="Dashed2242" pos="right" rows="2" />
+    <v-border row="6" col="12" color="Black" style="BoldDashed224" pos="right" rows="2" />
+    <v-border row="9" col="12" color="Black" style="BoldDashed211" pos="right" rows="2" />
+    <v-border row="12" col="12" color="Black" style="BoldDashed211" pos="right" rows="2" />
+    <v-border row="15" col="12" color="Black" style="BoldDashed31" pos="right" rows="2" />
+  </v-borders>
+  <h-borders>
+    <h-border row="3" col="1" color="Black" style="Solid" pos="top" cols="3" />
+    <h-border row="3" col="5" color="Black" style="Dotted" pos="top" cols="3" />
+    <h-border row="3" col="9" color="Black" style="Dashed2242" pos="top" cols="3" />
+    <h-border row="5" col="1" color="Black" style="Solid" pos="bottom" cols="3" />
+    <h-border row="5" col="5" color="Black" style="Dotted" pos="bottom" cols="3" />
+    <h-border row="5" col="9" color="Black" style="Dashed2242" pos="bottom" cols="3" />
+    <h-border row="6" col="1" color="Black" style="BoldSolid" pos="top" cols="3" />
+    <h-border row="6" col="5" color="Black" style="Dashed" pos="top" cols="3" />
+    <h-border row="6" col="9" color="Black" style="BoldDashed224" pos="top" cols="3" />
+    <h-border row="8" col="1" color="Black" style="BoldSolid" pos="bottom" cols="3" />
+    <h-border row="8" col="5" color="Black" style="Dashed" pos="bottom" cols="3" />
+    <h-border row="8" col="9" color="Black" style="BoldDashed224" pos="bottom" cols="3" />
+    <h-border row="9" col="1" color="Black" style="BoldSolidStrong" pos="top" cols="3" />
+    <h-border row="9" col="5" color="Black" style="Dashed2" pos="top" cols="3" />
+    <h-border row="9" col="9" color="Black" style="BoldDashed211" pos="top" cols="3" />
+    <h-border row="11" col="1" color="Black" style="BoldSolidStrong" pos="bottom" cols="3" />
+    <h-border row="11" col="5" color="Black" style="Dashed2" pos="bottom" cols="3" />
+    <h-border row="11" col="9" color="Black" style="BoldDashed211" pos="bottom" cols="3" />
+    <h-border row="12" col="1" color="Black" style="DoubleLine" pos="top" cols="3" />
+    <h-border row="12" col="5" color="Black" style="BoldDotted" pos="top" cols="3" />
+    <h-border row="12" col="9" color="Black" style="BoldDashed211" pos="top" cols="3" />
+    <h-border row="14" col="1" color="Black" style="DoubleLine" pos="bottom" cols="3" />
+    <h-border row="14" col="5" color="Black" style="BoldDotted" pos="bottom" cols="3" />
+    <h-border row="14" col="9" color="Black" style="BoldDashed211" pos="bottom" cols="3" />
+    <h-border row="15" col="9" color="Black" style="BoldDashed31" pos="top" cols="3" />
+    <h-border row="17" col="9" color="Black" style="BoldDashed31" pos="bottom" cols="3" />
+    <h-border row="18" col="1" color="Black" style="Solid" pos="top" cols="11" />
+    <h-border row="21" col="1" color="#ff0000" style="Solid" pos="top" cols="3" />
+    <h-border row="21" col="9" color="#ff00ff" style="Dotted" pos="all" cols="3" />
+    <h-border row="22" col="1" color="#ff0000" style="Solid" pos="all" cols="3" />
+    <h-border row="22" col="9" color="#ff00ff" style="Dotted" pos="all" cols="3" />
+    <h-border row="23" col="1" color="#ff0000" style="Solid" pos="bottom" cols="3" />
+    <h-border row="23" col="9" color="#ff00ff" style="Dotted" pos="all" cols="3" />
+  </h-borders>
+  <cells>
+    <cell row="1" col="1" colspan="11" format="text">Border Styles<style font-size="20" /></cell>
+    <cell row="19" col="1" colspan="3" format="text">Horizontal Lines<style align="center" /></cell>
+    <cell row="19" col="5" colspan="3" format="text">Vertical Lines<style align="center" /></cell>
+    <cell row="19" col="9" colspan="3" format="text">Inside Lines<style align="center" /></cell>
+  </cells>
+</grid>

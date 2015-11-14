@@ -9,14 +9,13 @@ namespace CoopManagement.Models
 {
     public class User : Model
     {
-        public String UserID;
+        public int UserID;
         public String Username;
         public String Password;
         public String LastName;
         public String FirstName;
         public String MiddleName;
-        public DateTime DateOfBirth;
-        public int Age;
+        public char AccessLevel;
 
         public User()
         {
@@ -30,7 +29,7 @@ namespace CoopManagement.Models
                 return new string[] {
                     "Username", "Password",
                     "LastName", "FirstName", "MiddleName",
-                    "DateOfBirth", "Age"
+                    "AccessLevel"
                 };
             }
         }
@@ -60,5 +59,7 @@ namespace CoopManagement.Models
                 };
             }
         }
+
     }
+    
 }

@@ -41,4 +41,18 @@ namespace CoopManagement.Classes
 
     }
 
+    public static class Extensions
+    {
+        public static string ToText(this string[] array)
+        {
+            String s = "";
+            for(int i=0;i<array.Length;i++)
+            {
+                s += array[i];
+                s += i == array.Length - 1 ? "" : ", ";
+            }
+            return s;
+        }
+    }
+
 }

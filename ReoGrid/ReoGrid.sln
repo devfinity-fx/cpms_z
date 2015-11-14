@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCase", "TestCase\TestCase.csproj", "{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{99F06745-743B-4B54-AFC8-30CC295B717B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReoGrid", "ReoGrid\ReoGrid.csproj", "{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorLib", "EditorLib\EditorLib.csproj", "{EE03A6AF-2937-4893-80F4-DD71F099A76C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csproj", "{A1E157BE-5C06-41DC-97C3-7409DF9771B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A70DFD7-B3E4-4E79-A6DD-99DC39A80D22}"
+	ProjectSection(SolutionItems) = preProject
+		Samples\background_color_patterns.rgf = Samples\background_color_patterns.rgf
+		Samples\border_styles.rgf = Samples\border_styles.rgf
+		Samples\calendar_2008_1.rgf = Samples\calendar_2008_1.rgf
+		Samples\calendar_2013.rgf = Samples\calendar_2013.rgf
+		Samples\cell_format.rgf = Samples\cell_format.rgf
+		Samples\change_colors.rgf = Samples\change_colors.rgf
+		Samples\Financial_Ratios.rgf = Samples\Financial_Ratios.rgf
+		Samples\input_form.rgf = Samples\input_form.rgf
+		Samples\Maze.rgf = Samples\Maze.rgf
+		Samples\merged_range.rgf = Samples\merged_range.rgf
+		Samples\order_sample.rgf = Samples\order_sample.rgf
+		Samples\outline.rgf = Samples\outline.rgf
+		Samples\project_cost_summary.rgf = Samples\project_cost_summary.rgf
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Minimum|Any CPU = Minimum|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}.Minimum|Any CPU.ActiveCfg = Release|Any CPU
+		{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19B14BE-FAA6-4563-B1D8-9F3F8C8F062E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Minimum|Any CPU.ActiveCfg = Minimum|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Minimum|Any CPU.Build.0 = Minimum|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F06745-743B-4B54-AFC8-30CC295B717B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Minimum|Any CPU.ActiveCfg = Minimum|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Minimum|Any CPU.Build.0 = Minimum|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B62357A-ABBC-4DB0-8633-F1D6A6C1EA53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Minimum|Any CPU.ActiveCfg = Minimum|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Minimum|Any CPU.Build.0 = Minimum|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE03A6AF-2937-4893-80F4-DD71F099A76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Minimum|Any CPU.ActiveCfg = Minimum|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Minimum|Any CPU.Build.0 = Minimum|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E157BE-5C06-41DC-97C3-7409DF9771B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

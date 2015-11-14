@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
@@ -65,13 +66,18 @@ namespace CoopManagement.Core
         // Returns:
         //   value:
         //      A bool value indicating if the query succeeded or failed.
-        protected static bool All()
+        public static QueryResult All<T>() where T : Model, new()
         {
+            
+            T newInstance = new T();
 
-            return true;
+            StringBuilder qr = QueryResult.GetCurrentInstance();
+
+            qr.AppendFormat("SELECT * FROM {0}", newInstance.TableName);
+            return qr.ToString();
         }
 
-
+        private static object[] valuesOnFind;
         // Find Record by ID
         // Summary:
         //     Finds record from the table using the primary key.
@@ -88,10 +94,9 @@ namespace CoopManagement.Core
         public static T Find<T>(object ID) where T : Model, new()
         {
             T newInstance = new T();
-            Console.WriteLine("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID);
-            object[] data = new object[] { };
-            object[] cols = new object[] { };
+
             FieldInfo[] fields = newInstance.GetType().GetFields();
+            valuesOnFind = new object[fields.Length];
             using (MySqlDataReader reader = ConnectionManager.ExecuteQuery("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID))
             {
                 if(reader.Read())
@@ -102,31 +107,29 @@ namespace CoopManagement.Core
                         if(fields[i].FieldType==typeof(DateTime))
                         {
                             value = reader.GetDateTime(fields[i].Name);
-                            newInstance.GetType().GetField(fields[i].Name).SetValue(newInstance, DateTime.Parse(value.ToString()));
-
+                            fields[i].SetValue(newInstance, DateTime.Parse(value.ToString()));
+                            valuesOnFind[i] = DateTime.Parse(value.ToString()).ToString("yyyy-MM-dd");
                         }
                         else
                         {
                             value = reader.GetString(fields[i].Name);
-                            newInstance.GetType().GetField(fields[i].Name).SetValue(newInstance, value);
+                            fields[i].SetValue(newInstance, Convert.ChangeType(value, fields[i].FieldType));
+                            valuesOnFind[i] = value;
                         }
-
+                        
+                        if(fields[i].Name==newInstance.PrimaryKey)
+                        {
+                            KeyValue = value;
+                        }
                     }
+                    IsUpdate = true;
                 }
                 else
                 {
                     throw new NullReferenceException("No matching record(s) found");
                 }
             }
-
-
-            foreach (FieldInfo f in newInstance.GetType().GetFields())
-            {
-                //f.SetValue(null, )
-            }
-
-
-            //newInstance.GetType().GetProperty("").SetValue(newInstance, id);
+            
             return newInstance;
         }
 
@@ -137,24 +140,56 @@ namespace CoopManagement.Core
         //
         //
         // Parameters:
-        //   ID:
+        //   pair:
         //     Pair containing the column and the value to be find.
         //
         //
         // Exceptions:
         //   T:System.NullReferenceException
         //     Column not found
-        public static QueryResult Where(KeyValuePair<String, object> pair, params KeyValuePair<String, object>[] pairx)
+        public static QueryResult Where<T>(Tuple<String, object> pair) where T : Model, new()
         {
-            return null;
+            T newInstance = new T();
+            List<Tuple<String, object>> parameters = new List<Tuple<string, object>>();
+            parameters.Add(pair);
+            StringBuilder qr = QueryResult.GetCurrentInstance();
+
+            if(qr.ToString().StartsWith("SELECT")==false)
+            {
+                qr.AppendFormat("SELECT * FROM {0}", newInstance.TableName);
+            }
+
+            qr.AppendFormat(" WHERE {0}='{1}'", pair.Item1, pair.Item2);
+            return qr.ToString();
         }
 
+        // Last
+        // Summary:
+        //     Fetch the last record in the table
+        //
+        //
+        // Exceptions:
+        //   T:System.NullReferenceException
+        //     No Records found.
+        public static QueryResult Last<T>() where T : Model, new()
+        {
+            T newInstance = new T();
+
+            StringBuilder qr = QueryResult.GetCurrentInstance();
+
+            if (qr.ToString().StartsWith("SELECT") == false)
+            {
+                qr.AppendFormat("SELECT * FROM {0} ORDER BY {1} DESC;", newInstance.TableName, newInstance.PrimaryKey);
+            }
+            
+            return qr.ToString();
+        }
 
         /*
         All - ok
         Find - ok
         // FindOrFail
-        Where - ok (queryresult)
+        //Where - ok (queryresult)
         OrderBy - ok (queryresult)
         Take - Limit - 
         First - Order Desc Limit 1
@@ -165,17 +200,25 @@ namespace CoopManagement.Core
         */
 
 
+        //=============================================================================
 
-        public void Save()
+        public bool Save()
         {
-            Console.WriteLine("INSERT INTO {0}({1}) VALUES({2});", TableName, FillableFields, Values);
+            if(!IsUpdate)
+            {
+                return ConnectionManager.ExecuteCommand("INSERT INTO {0}({1}) VALUES({2});", TableName, FillableFields, Values);
+            }
+            return false;
         }
 
-        public void Update()
+        public bool Update()
         {
-            Console.WriteLine("UPDATE SET {0} WHERE {1}='{2}';", UpdateValues, PrimaryKey, 10000);
+            if(IsUpdate)
+            {
+                return ConnectionManager.ExecuteCommand("UPDATE {0} SET {1} WHERE {2}='{3}';", TableName, UpdateValues, PrimaryKey, KeyValue);
+            }
+            return false;
         }
-
 
         //=============================================================================
         private String UpdateValues
@@ -186,11 +229,12 @@ namespace CoopManagement.Core
                 String placeholder = "";
                 String valuePlaceholder;
                 object value;
+
                 for(int i=0;i<fields.Length;i++)
                 {
-                    if(fields[i].GetValue(this)!=null)
+                    value = fields[i].GetValue(this);
+                    if (value != null)
                     {
-                        value = fields[i].GetValue(this);
                         if (Dates.Length > 0 && Dates.Contains(fields[i].Name))
                         {
                             if (((DateTime)fields[i].GetValue(this)) != DateTime.MinValue)
@@ -199,20 +243,28 @@ namespace CoopManagement.Core
                             }
                             else continue;
                         }
-                        valuePlaceholder = Utils.NumericTypes.Contains(value.GetType()) ? "{0}" : "'{0}'"; 
-                        placeholder += String.Format("{0}={1}", fields[i].Name, String.Format(valuePlaceholder, value));
-                        placeholder += ", ";
+                        
+                        if(valuesOnFind[i].ToString() != value.ToString())
+                        {
+                            valuePlaceholder = Utils.NumericTypes.Contains(value.GetType()) ? "{0}" : "'{0}'";
+                            placeholder += String.Format("{0}={1}", fields[i].Name, String.Format(valuePlaceholder, value));
+                            placeholder += ", ";
+                        }
                     }
                 }
                 placeholder = placeholder.Remove(placeholder.Length - 2);
                 return placeholder;
             }
+
+
         }
 
         private String Values
         {
             get
             {
+                FieldInfo[] fields = GetType().GetFields();
+                Console.WriteLine(fields.Length);
                 object[] values = new object[Fillable.Length];
 
                 for (int i = 0; i < Fillable.Length; i++)
@@ -252,81 +304,149 @@ namespace CoopManagement.Core
         {
             return Convert.ChangeType(obj, type);
         }
-        
+
+        public static Tuple<string, object> Param(String key, object val)
+        {
+            return Tuple.Create<String, object>(key, val);
+        }
+
+
         //=============================================================================
+
+        protected static bool IsUpdate = false;
+        protected static object KeyValue;
+        protected static String Query;
     }
-
-
-    /*
-    public static class ModelExtensions
-    {
-        public static Object GetPropValue(this Object obj, String name)
-        {
-            foreach (String part in name.Split('.'))
-            {
-                if (obj == null) { return null; }
-
-                Type type = obj.GetType();
-                PropertyInfo info = type.GetProperty(part);
-                if (info == null) { return null; }
-
-                obj = info.GetValue(obj, null);
-            }
-            return obj;
-        }
-
-        public static T GetPropValue<T>(this Model obj, String name)
-        {
-            Object retval = GetPropValue(obj, name);
-            if (retval == null) { return default(T); }
-
-            // throws InvalidCastException if types are incompatible
-            return (T)retval;
-        }
-
-
-        public static bool GetValue(this Model currentObject, string propName, out object value)
-        {
-            // call helper function that keeps track of which objects we've seen before
-            return GetValue(currentObject, propName, out value, new HashSet<object>());
-        }
-
-        public static bool GetValue(object currentObject, string propName, out object value,
-                             HashSet<object> searchedObjects)
-        {
-            PropertyInfo propInfo = currentObject.GetType().GetProperty(propName);
-            if (propInfo != null)
-            {
-                value = propInfo.GetValue(currentObject, null);
-                return true;
-            }
-            // search child properties
-            foreach (PropertyInfo propInfo2 in currentObject.GetType().GetProperties())
-            {   // ignore indexed properties
-                if (propInfo2.GetIndexParameters().Length == 0)
-                {
-                    object newObject = propInfo2.GetValue(currentObject, null);
-                    if (newObject != null && searchedObjects.Add(newObject) &&
-                        GetValue(newObject, propName, out value, searchedObjects))
-                        return true;
-                }
-            }
-            // property not found here
-            value = null;
-            return false;
-        }
-    }
-    */
-
+    
     public class QueryResult
     {
         private List<object> current;
+        private static StringBuilder CurrentInstance;
+
 
         private QueryResult() { current = new List<object>(); }
-
-        public static QueryResult Where(params KeyValuePair<String, object>[] pair)
+        private QueryResult(String q)
         {
-            return null;
+            new QueryResult();
+        }
+
+        public static StringBuilder GetCurrentInstance()
+        {
+            if(CurrentInstance==null)
+            {
+                CurrentInstance = new StringBuilder();
+            }
+            return CurrentInstance;
+        }
+
+        // Where
+        // Summary:
+        //     Finds record from the table using where conditions.
+        //
+        //
+        // Parameters:
+        //   pair:
+        //     Pair containing the column and the value to be find.
+        //
+        //
+        // Exceptions:
+        //   T:System.NullReferenceException
+        //     Column not found
+        public QueryResult Where<T>(Tuple<String, object> pair) where T : Model, new()
+        {
+            List<Tuple<String, object>> parameters = new List<Tuple<string, object>>();
+            parameters.Add(pair);
+            StringBuilder qr = QueryResult.GetCurrentInstance();
+            qr.AppendFormat(" AND {0}='{1}'", pair.Item1, pair.Item2);
+            return qr.ToString();
+        }
+
+        // Get
+        // Summary:
+        //     Builds the query.
+        //
+        public T[] Get<T>() where T: Model, new()
+        {
+            StringBuilder sb = CurrentInstance;
+            sb.Append(";");
+
+            List<T> list = new List<T>();
+            T obj = new T();
+
+            FieldInfo[] fields = obj.GetType().GetFields();
+            object value;
+            
+            using (MySqlDataReader reader = ConnectionManager.ExecuteQuery(sb.ToString()))
+            {
+                while(reader.Read())
+                {
+                    obj = new T();
+                    for (int i = 0; i < fields.Length; i++)
+                    {
+                        if (fields[i].FieldType == typeof(DateTime))
+                        {
+                            value = reader.GetDateTime(fields[i].Name);
+                            fields[i].SetValue(obj, DateTime.Parse(value.ToString()));
+                        }
+                        else
+                        {
+                            value = reader.GetString(fields[i].Name);
+                            fields[i].SetValue(obj, Convert.ChangeType(value, fields[i].FieldType));
+                        }
+                    }
+
+                    list.Add(obj);
+                }
+            }
+
+            return list.ToArray<T>();
+        }
+
+        // Get
+        // Summary:
+        //     Builds the query.
+        // Parameters:
+        //     columns:
+        //      Contains the list of fields to be fetched from the query
+        public T[] Get<T>(params String[] columns) where T : Model, new()
+        {
+            StringBuilder sb = CurrentInstance;
+            sb.Append(";");
+            sb.Replace("*", columns.ToText());
+
+            List<T> list = new List<T>();
+            T obj = new T();
+
+            FieldInfo[] fields = obj.GetType().GetFields();
+            object value;
+
+            using (MySqlDataReader reader = ConnectionManager.ExecuteQuery(sb.ToString()))
+            {
+                while (reader.Read())
+                {
+                    obj = new T();
+                    for (int i = 0; i < fields.Length; i++)
+                    {
+                        if (columns.Contains(fields[i].Name))
+                        {
+                            if (fields[i].FieldType == typeof(DateTime))
+                            {
+                                value = reader.GetDateTime(fields[i].Name);
+                                fields[i].SetValue(obj, DateTime.Parse(value.ToString()));
+                            }
+                            else
+                            {
+                                value = reader.GetString(fields[i].Name);
+                                fields[i].SetValue(obj, value);
+                            }
+                        }
+                    }
+
+                    list.Add(obj);
+                }
+            }
+
+            return list.ToArray<T>();
         }
 
         public QueryResult SortBy(params Tuple<String, SortType>[] order)
@@ -354,6 +474,17 @@ namespace CoopManagement.Core
         {
             // return json
             return "";
+        }
+
+        //
+
+        public static implicit operator string (QueryResult q)
+        {
+            return q.ToString();
+        }
+        public static implicit operator QueryResult(string q)
+        {
+            return new QueryResult(q);
         }
 
         #region Interface Implementation

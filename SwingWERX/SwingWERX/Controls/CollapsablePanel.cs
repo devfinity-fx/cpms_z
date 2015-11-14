@@ -11,7 +11,6 @@ using SwingWERX.Utils;
 
 namespace SwingWERX.Controls
 {
-    [ToolboxItem(false)]
     public class CollapsablePanel : Control
     {
         public CollapsablePanel()

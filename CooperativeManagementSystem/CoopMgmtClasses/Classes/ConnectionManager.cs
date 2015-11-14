@@ -20,7 +20,7 @@ namespace CoopManagement.Classes
 
             if (_MySqlConnection == null || _MySqlConnection.State == System.Data.ConnectionState.Closed)
             {
-                _MySqlConnection = new MySqlConnection(@"Server=localhost;Database=enr;Uid=root;Pwd=mindwerx;");
+                _MySqlConnection = new MySqlConnection(@"Server=localhost;Database=coop;Uid=root;Pwd=mindwerx;");
                 // replace [mindwerx] with blank or null if you don't have password on your mysql server.
                 _MySqlConnection.Open();
             }
@@ -42,7 +42,9 @@ namespace CoopManagement.Classes
                     CommandType = System.Data.CommandType.Text,
                     CommandText = Query
                 };
+#if DEBUG
                 Console.WriteLine("QueryNoParam: {0}", Query);
+#endif
                 return command.ExecuteReader();
             }
             catch (Exception e)
@@ -65,7 +67,9 @@ namespace CoopManagement.Classes
                     CommandType = System.Data.CommandType.Text,
                     CommandText = String.Format(Query, args)
                 };
+#if DEBUG
                 Console.WriteLine("QueryParam: {0}", command.CommandText);
+#endif
                 return command.ExecuteReader();
             }
             catch (Exception e)
@@ -88,7 +92,9 @@ namespace CoopManagement.Classes
                     CommandType = System.Data.CommandType.Text,
                     CommandText = Command
                 };
+#if DEBUG
                 Console.WriteLine("CommandNoParam: {0}", command.CommandText);
+#endif
                 command.ExecuteNonQuery();
                 return true;
             }
@@ -110,7 +116,9 @@ namespace CoopManagement.Classes
                     CommandType = System.Data.CommandType.Text,
                     CommandText = String.Format(Command, args)
                 };
+#if DEBUG
                 Console.WriteLine("QueryWtParam: {0}", command.CommandText);
+#endif
                 command.ExecuteNonQuery();
                 return true;
             }
