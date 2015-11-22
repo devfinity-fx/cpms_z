@@ -341,7 +341,7 @@
             this.lblMemberNo.Depth = 0;
             this.lblMemberNo.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
             this.lblMemberNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
-            this.lblMemberNo.Location = new System.Drawing.Point(331, 58);
+            this.lblMemberNo.Location = new System.Drawing.Point(331, 55);
             this.lblMemberNo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMemberNo.Name = "lblMemberNo";
             this.lblMemberNo.Size = new System.Drawing.Size(66, 25);

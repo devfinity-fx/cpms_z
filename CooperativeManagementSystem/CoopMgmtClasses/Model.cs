@@ -272,7 +272,7 @@ namespace CoopManagement.Core
                     FieldInfo info = GetType().GetField(Fillable[i]);
                     if(Fillable.Contains(info.Name))
                     {
-                        if (Dates.Length > 0 && Dates.Contains(info.Name))
+                        if (Dates!=null && Dates.Length > 0 && Dates.Contains(info.Name))
                         {
                             values[i] = ((DateTime)info.GetValue(this)).ToString("yyyy-MM-dd");
                         }

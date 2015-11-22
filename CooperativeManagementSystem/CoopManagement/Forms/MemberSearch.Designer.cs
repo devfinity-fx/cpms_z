@@ -40,7 +40,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.Depth = 0;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
             this.txtSearch.Hint = "Enter Member Number or Name";

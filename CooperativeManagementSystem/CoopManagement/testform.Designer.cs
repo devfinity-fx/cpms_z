@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.swxPanel1 = new SwingWERX.Controls.SwxPanel();
-            this.memberCreate1 = new CoopManagement.Controls.MemberCreate();
+            this.accountsMaintenance1 = new CoopManagement.Controls.AccountsMaintenance();
             this.swxPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.swxPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.swxPanel1.Controls.Add(this.memberCreate1);
+            this.swxPanel1.Controls.Add(this.accountsMaintenance1);
             this.swxPanel1.GradientColor1 = System.Drawing.Color.Snow;
             this.swxPanel1.GradientColor2 = System.Drawing.Color.Snow;
             this.swxPanel1.Location = new System.Drawing.Point(2, 64);
@@ -47,14 +47,14 @@
             this.swxPanel1.Size = new System.Drawing.Size(716, 473);
             this.swxPanel1.TabIndex = 0;
             // 
-            // memberCreate1
+            // accountsMaintenance1
             // 
-            this.memberCreate1.BackColor = System.Drawing.Color.Snow;
-            this.memberCreate1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberCreate1.Location = new System.Drawing.Point(0, 0);
-            this.memberCreate1.Name = "memberCreate1";
-            this.memberCreate1.Size = new System.Drawing.Size(716, 473);
-            this.memberCreate1.TabIndex = 0;
+            this.accountsMaintenance1.BackColor = System.Drawing.Color.Snow;
+            this.accountsMaintenance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsMaintenance1.Location = new System.Drawing.Point(0, 0);
+            this.accountsMaintenance1.Name = "accountsMaintenance1";
+            this.accountsMaintenance1.Size = new System.Drawing.Size(716, 473);
+            this.accountsMaintenance1.TabIndex = 0;
             // 
             // testform
             // 
@@ -77,6 +77,6 @@
         #endregion
 
         private SwingWERX.Controls.SwxPanel swxPanel1;
-        private Controls.MemberCreate memberCreate1;
+        private Controls.AccountsMaintenance accountsMaintenance1;
     }
 }

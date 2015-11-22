@@ -15,3 +15,6 @@ D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopMgmt.pdb
 D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.testform.resources
 D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.Forms.MemberSearch.resources
 D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.Controls.MemberCreate.resources
+D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.Forms.CreateCategory.resources
+D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.Controls.AccountsMaintenance.resources
+D:\DevBox\CooperativeManagementSystem\CoopManagement\obj\Debug\CoopManagement.Forms.CreateAccount.resources
