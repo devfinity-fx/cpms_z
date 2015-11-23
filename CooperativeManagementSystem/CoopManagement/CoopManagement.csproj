@@ -77,6 +77,9 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\RadIntTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\AccountsMaintenance.cs">
       <SubType>UserControl</SubType>
     </Compile>

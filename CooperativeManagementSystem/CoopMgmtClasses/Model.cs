@@ -361,6 +361,32 @@ namespace CoopManagement.Core
             return qr.ToString();
         }
 
+
+        // Get
+        // Summary:
+        //     Builds the query and returns a resultset.
+        //
+        public MySqlDataReader Get()
+        {
+            StringBuilder sb = CurrentInstance;
+            sb.Append(";");
+
+            return ConnectionManager.ExecuteQuery(sb.ToString());
+        }
+
+        // Get
+        // Summary:
+        //     Builds the query and returns a resultset.
+        //
+        public MySqlDataReader Get(params String[] columns)
+        {
+            StringBuilder sb = CurrentInstance;
+            sb.Append(";");
+            sb.Replace("*", columns.ToText());
+
+            return ConnectionManager.ExecuteQuery(sb.ToString());
+        }
+
         // Get
         // Summary:
         //     Builds the query.

@@ -123,10 +123,13 @@
             this.MinimizeBox = false;
             this.Name = "CreateCategory";
             this.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.ShowInTaskbar = false;
             this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "General Ledger — Create Category";
+            this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingEvent);
             this.Load += new System.EventHandler(this.LoadEvent);
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();

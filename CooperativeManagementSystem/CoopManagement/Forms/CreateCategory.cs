@@ -17,9 +17,17 @@ namespace CoopManagement.Forms
 {
     public partial class CreateCategory : MaterialForm
     {
+        private int ExitCode = 0;
+
         public CreateCategory()
         {
             InitializeComponent();
+        }
+
+        public CreateCategory(int ExitCode)
+        {
+            InitializeComponent();
+            this.ExitCode = ExitCode;
         }
 
         private void LoadEvent(object sender, EventArgs e)
@@ -47,6 +55,14 @@ namespace CoopManagement.Forms
             else
             {
                 MessageBox.Show(this, "Please fill up all required fields.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void FormClosingEvent(object sender, FormClosingEventArgs e)
+        {
+            if(ExitCode==1)
+            {
+                new CreateAccount().ShowDialog();
             }
         }
     }
