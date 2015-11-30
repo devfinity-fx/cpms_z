@@ -68,7 +68,7 @@ namespace CoopManagement.Core
         //      A bool value indicating if the query succeeded or failed.
         public static QueryResult All<T>() where T : Model, new()
         {
-            
+
             T newInstance = new T();
 
             StringBuilder qr = QueryResult.GetCurrentInstance();
@@ -99,12 +99,12 @@ namespace CoopManagement.Core
             valuesOnFind = new object[fields.Length];
             using (MySqlDataReader reader = ConnectionManager.ExecuteQuery("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, newInstance.PrimaryKey, ID))
             {
-                if(reader.Read())
+                if (reader.Read())
                 {
-                    for(int i=0;i<fields.Length;i++)
+                    for (int i = 0; i < fields.Length; i++)
                     {
                         object value; // inner scope
-                        if(fields[i].FieldType==typeof(DateTime))
+                        if (fields[i].FieldType == typeof(DateTime))
                         {
                             value = reader.GetDateTime(fields[i].Name);
                             fields[i].SetValue(newInstance, DateTime.Parse(value.ToString()));
@@ -116,8 +116,8 @@ namespace CoopManagement.Core
                             fields[i].SetValue(newInstance, Convert.ChangeType(value, fields[i].FieldType));
                             valuesOnFind[i] = value;
                         }
-                        
-                        if(fields[i].Name==newInstance.PrimaryKey)
+
+                        if (fields[i].Name == newInstance.PrimaryKey)
                         {
                             KeyValue = value;
                         }
@@ -129,7 +129,63 @@ namespace CoopManagement.Core
                     throw new NullReferenceException("No matching record(s) found");
                 }
             }
-            
+
+            return newInstance;
+        }
+
+
+        // Find Record by ID
+        // Summary:
+        //     Finds record from the table using the primary key.
+        //
+        //
+        // Parameters:
+        //   ID:
+        //     The primary key field value to find.
+        //
+        //
+        // Exceptions:
+        //   T:System.NullReferenceException
+        //     The primary key value is not found
+        public static T Find<T>(object ID, String column) where T : Model, new()
+        {
+            T newInstance = new T();
+
+            FieldInfo[] fields = newInstance.GetType().GetFields();
+            valuesOnFind = new object[fields.Length];
+            using (MySqlDataReader reader = ConnectionManager.ExecuteQuery("SELECT * FROM {0} WHERE {1} = '{2}'", newInstance.TableName, column, ID))
+            {
+                if (reader.Read())
+                {
+                    for (int i = 0; i < fields.Length; i++)
+                    {
+                        object value; // inner scope
+                        if (fields[i].FieldType == typeof(DateTime))
+                        {
+                            value = reader.GetDateTime(fields[i].Name);
+                            fields[i].SetValue(newInstance, DateTime.Parse(value.ToString()));
+                            valuesOnFind[i] = DateTime.Parse(value.ToString()).ToString("yyyy-MM-dd");
+                        }
+                        else
+                        {
+                            value = reader.GetString(fields[i].Name);
+                            fields[i].SetValue(newInstance, Convert.ChangeType(value, fields[i].FieldType));
+                            valuesOnFind[i] = value;
+                        }
+
+                        if (fields[i].Name == newInstance.PrimaryKey)
+                        {
+                            KeyValue = value;
+                        }
+                    }
+                    IsUpdate = true;
+                }
+                else
+                {
+                    throw new NullReferenceException("No matching record(s) found");
+                }
+            }
+
             return newInstance;
         }
 
@@ -154,7 +210,7 @@ namespace CoopManagement.Core
             parameters.Add(pair);
             StringBuilder qr = QueryResult.GetCurrentInstance();
 
-            if(qr.ToString().StartsWith("SELECT")==false)
+            if (qr.ToString().StartsWith("SELECT") == false)
             {
                 qr.AppendFormat("SELECT * FROM {0}", newInstance.TableName);
             }
@@ -181,10 +237,25 @@ namespace CoopManagement.Core
             {
                 qr.AppendFormat("SELECT * FROM {0} ORDER BY {1} DESC;", newInstance.TableName, newInstance.PrimaryKey);
             }
-            
+
             return qr.ToString();
         }
 
+
+        public static QueryResult Join<T>(T joinTo) where T : Model, new()
+        {
+            T baseClass = new T();
+            T secondClass = (T)Activator.CreateInstance(joinTo.GetType());
+
+            StringBuilder qr = QueryResult.GetCurrentInstance();
+
+            if (qr.ToString().StartsWith("SELECT") == false)
+            {
+                qr.AppendFormat("SELECT * FROM {0} ORDER BY {1} DESC;", baseClass.TableName, secondClass.PrimaryKey);
+            }
+
+            return qr.ToString();
+        }
         /*
         All - ok
         Find - ok
@@ -199,12 +270,11 @@ namespace CoopManagement.Core
         Delete
         */
 
-
         //=============================================================================
 
         public bool Save()
         {
-            if(!IsUpdate)
+            if (!IsUpdate)
             {
                 return ConnectionManager.ExecuteCommand("INSERT INTO {0}({1}) VALUES({2});", TableName, FillableFields, Values);
             }
@@ -213,7 +283,7 @@ namespace CoopManagement.Core
 
         public bool Update()
         {
-            if(IsUpdate)
+            if (IsUpdate)
             {
                 return ConnectionManager.ExecuteCommand("UPDATE {0} SET {1} WHERE {2}='{3}';", TableName, UpdateValues, PrimaryKey, KeyValue);
             }
@@ -230,7 +300,7 @@ namespace CoopManagement.Core
                 String valuePlaceholder;
                 object value;
 
-                for(int i=0;i<fields.Length;i++)
+                for (int i = 0; i < fields.Length; i++)
                 {
                     value = fields[i].GetValue(this);
                     if (value != null)
@@ -243,8 +313,8 @@ namespace CoopManagement.Core
                             }
                             else continue;
                         }
-                        
-                        if(valuesOnFind[i].ToString() != value.ToString())
+
+                        if (valuesOnFind[i].ToString() != value.ToString())
                         {
                             valuePlaceholder = Utils.NumericTypes.Contains(value.GetType()) ? "{0}" : "'{0}'";
                             placeholder += String.Format("{0}={1}", fields[i].Name, String.Format(valuePlaceholder, value));
@@ -270,9 +340,9 @@ namespace CoopManagement.Core
                 for (int i = 0; i < Fillable.Length; i++)
                 {
                     FieldInfo info = GetType().GetField(Fillable[i]);
-                    if(Fillable.Contains(info.Name))
+                    if (Fillable.Contains(info.Name))
                     {
-                        if (Dates!=null && Dates.Length > 0 && Dates.Contains(info.Name))
+                        if (Dates != null && Dates.Length > 0 && Dates.Contains(info.Name))
                         {
                             values[i] = ((DateTime)info.GetValue(this)).ToString("yyyy-MM-dd");
                         }
@@ -317,7 +387,7 @@ namespace CoopManagement.Core
         protected static object KeyValue;
         protected static String Query;
     }
-    
+
     public class QueryResult
     {
         private List<object> current;
@@ -332,11 +402,16 @@ namespace CoopManagement.Core
 
         public static StringBuilder GetCurrentInstance()
         {
-            if(CurrentInstance==null)
+            if (CurrentInstance == null)
             {
                 CurrentInstance = new StringBuilder();
             }
             return CurrentInstance;
+        }
+
+        public static void DestroyInstasnce()
+        {
+            CurrentInstance = null;
         }
 
         // Where
@@ -370,7 +445,7 @@ namespace CoopManagement.Core
         {
             StringBuilder sb = CurrentInstance;
             sb.Append(";");
-
+            CurrentInstance = null;
             return ConnectionManager.ExecuteQuery(sb.ToString());
         }
 
@@ -383,6 +458,7 @@ namespace CoopManagement.Core
             StringBuilder sb = CurrentInstance;
             sb.Append(";");
             sb.Replace("*", columns.ToText());
+            CurrentInstance = null;
 
             return ConnectionManager.ExecuteQuery(sb.ToString());
         }
@@ -391,20 +467,21 @@ namespace CoopManagement.Core
         // Summary:
         //     Builds the query.
         //
-        public T[] Get<T>() where T: Model, new()
+        public T[] Get<T>() where T : Model, new()
         {
             StringBuilder sb = CurrentInstance;
             sb.Append(";");
+            CurrentInstance = null;
 
             List<T> list = new List<T>();
             T obj = new T();
 
             FieldInfo[] fields = obj.GetType().GetFields();
             object value;
-            
+
             using (MySqlDataReader reader = ConnectionManager.ExecuteQuery(sb.ToString()))
             {
-                while(reader.Read())
+                while (reader.Read())
                 {
                     obj = new T();
                     for (int i = 0; i < fields.Length; i++)
@@ -439,6 +516,7 @@ namespace CoopManagement.Core
             StringBuilder sb = CurrentInstance;
             sb.Append(";");
             sb.Replace("*", columns.ToText());
+            CurrentInstance = null;
 
             List<T> list = new List<T>();
             T obj = new T();
@@ -587,7 +665,7 @@ namespace CoopManagement.Core
         {
             current.RemoveAt(index);
         }
-        
+
         #endregion
     }
 

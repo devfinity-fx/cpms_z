@@ -46,12 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConnectionManager.cs" />
+    <Compile Include="Classes\Queries.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Models\LedgerAccount.cs" />
     <Compile Include="Models\AccountCategory.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

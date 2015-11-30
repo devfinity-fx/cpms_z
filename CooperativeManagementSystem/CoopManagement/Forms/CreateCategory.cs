@@ -62,7 +62,11 @@ namespace CoopManagement.Forms
         {
             if(ExitCode==1)
             {
-                new CreateAccount().ShowDialog();
+                CreateAccount account = new CreateAccount();
+                //Hide();
+                Close();
+                account.ShowDialog();
+                Console.WriteLine("Category Closing");
             }
         }
     }

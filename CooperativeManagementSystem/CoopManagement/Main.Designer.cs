@@ -32,13 +32,16 @@
             this.wrapper = new SwingWERX.Controls.SwxPanel();
             this.content = new SwingWERX.Controls.SwxPanel();
             this.contentManager = new SwingWERX.Controls.PanelManager();
+            this.p5_GeneralLedger = new SwingWERX.Controls.ManagedPanel();
+            this.accountsMaintenance = new CoopManagement.Controls.AccountsMaintenance();
             this.p0_Home = new SwingWERX.Controls.ManagedPanel();
+            this.home1 = new CoopManagement.Controls.Home();
             this.p1_Verifier = new SwingWERX.Controls.ManagedPanel();
             this.p2_CashCollection = new SwingWERX.Controls.ManagedPanel();
             this.p3_CashDisbursement = new SwingWERX.Controls.ManagedPanel();
             this.p4_JournalVoucher = new SwingWERX.Controls.ManagedPanel();
-            this.p5_GeneralLedger = new SwingWERX.Controls.ManagedPanel();
             this.p6_SubsidiaryLedger = new SwingWERX.Controls.ManagedPanel();
+            this.memberAccounts1 = new CoopManagement.Controls.MemberAccounts();
             this.p7_SetupComputations = new SwingWERX.Controls.ManagedPanel();
             this.p8_Utilities = new SwingWERX.Controls.ManagedPanel();
             this.navigation = new SwingWERX.Controls.SwxPanel();
@@ -56,6 +59,9 @@
             this.wrapper.SuspendLayout();
             this.content.SuspendLayout();
             this.contentManager.SuspendLayout();
+            this.p5_GeneralLedger.SuspendLayout();
+            this.p0_Home.SuspendLayout();
+            this.p6_SubsidiaryLedger.SuspendLayout();
             this.navigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,28 +97,55 @@
             // contentManager
             // 
             this.contentManager.BackColor = System.Drawing.Color.Snow;
+            this.contentManager.Controls.Add(this.p5_GeneralLedger);
             this.contentManager.Controls.Add(this.p0_Home);
             this.contentManager.Controls.Add(this.p1_Verifier);
             this.contentManager.Controls.Add(this.p2_CashCollection);
             this.contentManager.Controls.Add(this.p3_CashDisbursement);
             this.contentManager.Controls.Add(this.p4_JournalVoucher);
-            this.contentManager.Controls.Add(this.p5_GeneralLedger);
             this.contentManager.Controls.Add(this.p6_SubsidiaryLedger);
             this.contentManager.Controls.Add(this.p7_SetupComputations);
             this.contentManager.Controls.Add(this.p8_Utilities);
             this.contentManager.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentManager.Location = new System.Drawing.Point(0, 0);
             this.contentManager.Name = "contentManager";
-            this.contentManager.SelectedIndex = 0;
+            this.contentManager.SelectedIndex = 1;
             this.contentManager.SelectedPanel = this.p0_Home;
             this.contentManager.Size = new System.Drawing.Size(600, 540);
             this.contentManager.TabIndex = 0;
             // 
+            // p5_GeneralLedger
+            // 
+            this.p5_GeneralLedger.Controls.Add(this.accountsMaintenance);
+            this.p5_GeneralLedger.Location = new System.Drawing.Point(0, 0);
+            this.p5_GeneralLedger.Name = "p5_GeneralLedger";
+            this.p5_GeneralLedger.Size = new System.Drawing.Size(0, 0);
+            this.p5_GeneralLedger.Text = "managedPanel3";
+            // 
+            // accountsMaintenance
+            // 
+            this.accountsMaintenance.BackColor = System.Drawing.Color.Snow;
+            this.accountsMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountsMaintenance.Location = new System.Drawing.Point(0, 0);
+            this.accountsMaintenance.Name = "accountsMaintenance";
+            this.accountsMaintenance.Size = new System.Drawing.Size(0, 0);
+            this.accountsMaintenance.TabIndex = 0;
+            // 
             // p0_Home
             // 
+            this.p0_Home.Controls.Add(this.home1);
             this.p0_Home.Location = new System.Drawing.Point(0, 0);
             this.p0_Home.Name = "p0_Home";
             this.p0_Home.Size = new System.Drawing.Size(600, 540);
+            // 
+            // home1
+            // 
+            this.home1.BackColor = System.Drawing.Color.Snow;
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(0, 0);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(600, 540);
+            this.home1.TabIndex = 0;
             // 
             // p1_Verifier
             // 
@@ -142,19 +175,22 @@
             this.p4_JournalVoucher.Size = new System.Drawing.Size(0, 0);
             this.p4_JournalVoucher.Text = "managedPanel3";
             // 
-            // p5_GeneralLedger
-            // 
-            this.p5_GeneralLedger.Location = new System.Drawing.Point(0, 0);
-            this.p5_GeneralLedger.Name = "p5_GeneralLedger";
-            this.p5_GeneralLedger.Size = new System.Drawing.Size(0, 0);
-            this.p5_GeneralLedger.Text = "managedPanel3";
-            // 
             // p6_SubsidiaryLedger
             // 
+            this.p6_SubsidiaryLedger.Controls.Add(this.memberAccounts1);
             this.p6_SubsidiaryLedger.Location = new System.Drawing.Point(0, 0);
             this.p6_SubsidiaryLedger.Name = "p6_SubsidiaryLedger";
-            this.p6_SubsidiaryLedger.Size = new System.Drawing.Size(0, 0);
+            this.p6_SubsidiaryLedger.Size = new System.Drawing.Size(600, 540);
             this.p6_SubsidiaryLedger.Text = "managedPanel3";
+            // 
+            // memberAccounts1
+            // 
+            this.memberAccounts1.BackColor = System.Drawing.Color.Snow;
+            this.memberAccounts1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberAccounts1.Location = new System.Drawing.Point(0, 0);
+            this.memberAccounts1.Name = "memberAccounts1";
+            this.memberAccounts1.Size = new System.Drawing.Size(600, 540);
+            this.memberAccounts1.TabIndex = 0;
             // 
             // p7_SetupComputations
             // 
@@ -234,7 +270,7 @@
             this.stripButton6.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton6.PressedImage = global::CoopManagement.Properties.Resources.tools;
             this.stripButton6.Size = new System.Drawing.Size(200, 42);
-            this.stripButton6.TabIndex = 7;
+            this.stripButton6.TabIndex = 8;
             this.stripButton6.Text = "Utilities";
             this.stripButton6.UseCustomBackgroundColors = true;
             this.stripButton6.Click += new System.EventHandler(this.ClickEvent);
@@ -258,7 +294,7 @@
             this.stripButton7.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton7.PressedImage = global::CoopManagement.Properties.Resources.settings;
             this.stripButton7.Size = new System.Drawing.Size(200, 42);
-            this.stripButton7.TabIndex = 6;
+            this.stripButton7.TabIndex = 7;
             this.stripButton7.Text = "Setup & Computations";
             this.stripButton7.UseCustomBackgroundColors = true;
             this.stripButton7.Click += new System.EventHandler(this.ClickEvent);
@@ -282,7 +318,7 @@
             this.stripButton8.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton8.PressedImage = global::CoopManagement.Properties.Resources.subsidiary;
             this.stripButton8.Size = new System.Drawing.Size(200, 42);
-            this.stripButton8.TabIndex = 5;
+            this.stripButton8.TabIndex = 6;
             this.stripButton8.Text = "Subsidiary Ledger";
             this.stripButton8.UseCustomBackgroundColors = true;
             this.stripButton8.Click += new System.EventHandler(this.ClickEvent);
@@ -306,7 +342,7 @@
             this.stripButton5.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton5.PressedImage = global::CoopManagement.Properties.Resources.ledger;
             this.stripButton5.Size = new System.Drawing.Size(200, 42);
-            this.stripButton5.TabIndex = 4;
+            this.stripButton5.TabIndex = 5;
             this.stripButton5.Text = "General Ledger";
             this.stripButton5.UseCustomBackgroundColors = true;
             this.stripButton5.Click += new System.EventHandler(this.ClickEvent);
@@ -330,7 +366,7 @@
             this.stripButton4.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton4.PressedImage = global::CoopManagement.Properties.Resources.ticket;
             this.stripButton4.Size = new System.Drawing.Size(200, 42);
-            this.stripButton4.TabIndex = 3;
+            this.stripButton4.TabIndex = 4;
             this.stripButton4.Text = "Journal Voucher";
             this.stripButton4.UseCustomBackgroundColors = true;
             this.stripButton4.Click += new System.EventHandler(this.ClickEvent);
@@ -354,7 +390,7 @@
             this.stripButton3.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton3.PressedImage = global::CoopManagement.Properties.Resources.disbursement;
             this.stripButton3.Size = new System.Drawing.Size(200, 42);
-            this.stripButton3.TabIndex = 2;
+            this.stripButton3.TabIndex = 3;
             this.stripButton3.Text = "Cash Disbursement";
             this.stripButton3.UseCustomBackgroundColors = true;
             this.stripButton3.Click += new System.EventHandler(this.ClickEvent);
@@ -378,7 +414,7 @@
             this.stripButton2.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton2.PressedImage = global::CoopManagement.Properties.Resources.po;
             this.stripButton2.Size = new System.Drawing.Size(200, 42);
-            this.stripButton2.TabIndex = 1;
+            this.stripButton2.TabIndex = 2;
             this.stripButton2.Text = "Cash Collection";
             this.stripButton2.UseCustomBackgroundColors = true;
             this.stripButton2.Click += new System.EventHandler(this.ClickEvent);
@@ -402,7 +438,7 @@
             this.stripButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.stripButton1.PressedImage = global::CoopManagement.Properties.Resources.search;
             this.stripButton1.Size = new System.Drawing.Size(200, 42);
-            this.stripButton1.TabIndex = 0;
+            this.stripButton1.TabIndex = 1;
             this.stripButton1.Text = "Verifier";
             this.stripButton1.UseCustomBackgroundColors = true;
             this.stripButton1.Click += new System.EventHandler(this.ClickEvent);
@@ -455,6 +491,9 @@
             this.wrapper.ResumeLayout(false);
             this.content.ResumeLayout(false);
             this.contentManager.ResumeLayout(false);
+            this.p5_GeneralLedger.ResumeLayout(false);
+            this.p0_Home.ResumeLayout(false);
+            this.p6_SubsidiaryLedger.ResumeLayout(false);
             this.navigation.ResumeLayout(false);
             this.navigation.PerformLayout();
             this.ResumeLayout(false);
@@ -487,6 +526,9 @@
         private SwingWERX.Controls.ManagedPanel p6_SubsidiaryLedger;
         private SwingWERX.Controls.ManagedPanel p7_SetupComputations;
         private SwingWERX.Controls.ManagedPanel p8_Utilities;
+        private Controls.AccountsMaintenance accountsMaintenance;
+        private Controls.MemberAccounts memberAccounts1;
+        private Controls.Home home1;
     }
 }
 

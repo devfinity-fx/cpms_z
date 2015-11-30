@@ -111,7 +111,7 @@
             this.Name = "MemberSearch";
             this.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MemberSearch";
+            this.Text = "Search Member Record";
             ((System.ComponentModel.ISupportInitialize)(this.gridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.ResumeLayout(false);

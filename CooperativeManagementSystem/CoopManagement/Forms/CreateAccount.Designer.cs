@@ -55,7 +55,7 @@
             this.separator2.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator2.Location = new System.Drawing.Point(14, 128);
             this.separator2.Name = "separator2";
-            this.separator2.Size = new System.Drawing.Size(291, 23);
+            this.separator2.Size = new System.Drawing.Size(294, 23);
             this.separator2.TabIndex = 4;
             this.separator2.Text = "Title";
             // 
@@ -67,7 +67,7 @@
             this.separator1.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator1.Location = new System.Drawing.Point(14, 184);
             this.separator1.Name = "separator1";
-            this.separator1.Size = new System.Drawing.Size(292, 23);
+            this.separator1.Size = new System.Drawing.Size(295, 23);
             this.separator1.TabIndex = 5;
             this.separator1.Text = "Description";
             // 
@@ -79,7 +79,7 @@
             this.txtDescription.Location = new System.Drawing.Point(14, 210);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(291, 92);
+            this.txtDescription.Size = new System.Drawing.Size(294, 92);
             this.txtDescription.TabIndex = 3;
             this.txtDescription.ThemeName = "Windows8";
             // 
@@ -90,7 +90,7 @@
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.txtTitle.Location = new System.Drawing.Point(14, 154);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(291, 27);
+            this.txtTitle.Size = new System.Drawing.Size(294, 27);
             this.txtTitle.TabIndex = 2;
             this.txtTitle.ThemeName = "Windows8";
             // 
@@ -106,7 +106,7 @@
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Primary = true;
-            this.btnCreate.Size = new System.Drawing.Size(293, 30);
+            this.btnCreate.Size = new System.Drawing.Size(296, 30);
             this.btnCreate.TabIndex = 8;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.separator3.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator3.Location = new System.Drawing.Point(14, 72);
             this.separator3.Name = "separator3";
-            this.separator3.Size = new System.Drawing.Size(291, 23);
+            this.separator3.Size = new System.Drawing.Size(294, 23);
             this.separator3.TabIndex = 9;
             this.separator3.Text = "Account Category";
             // 
@@ -133,7 +133,7 @@
             this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.cmbCategories.Location = new System.Drawing.Point(14, 98);
             this.cmbCategories.Name = "cmbCategories";
-            this.cmbCategories.Size = new System.Drawing.Size(291, 27);
+            this.cmbCategories.Size = new System.Drawing.Size(294, 27);
             this.cmbCategories.TabIndex = 1;
             this.cmbCategories.ThemeName = "Windows8";
             this.cmbCategories.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.Category_Changed);
@@ -148,7 +148,7 @@
             this.cmbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
             this.cmbType.Location = new System.Drawing.Point(14, 331);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(291, 27);
+            this.cmbType.Size = new System.Drawing.Size(294, 27);
             this.cmbType.TabIndex = 4;
             this.cmbType.ThemeName = "Windows8";
             // 
@@ -160,7 +160,7 @@
             this.separator4.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator4.Location = new System.Drawing.Point(14, 305);
             this.separator4.Name = "separator4";
-            this.separator4.Size = new System.Drawing.Size(291, 23);
+            this.separator4.Size = new System.Drawing.Size(294, 23);
             this.separator4.TabIndex = 11;
             this.separator4.Text = "Type";
             // 
@@ -172,7 +172,7 @@
             this.separator5.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator5.Location = new System.Drawing.Point(14, 361);
             this.separator5.Name = "separator5";
-            this.separator5.Size = new System.Drawing.Size(291, 23);
+            this.separator5.Size = new System.Drawing.Size(294, 23);
             this.separator5.TabIndex = 13;
             this.separator5.Text = "Initial Balance";
             // 
@@ -183,7 +183,7 @@
             this.txtInitialBalance.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.txtInitialBalance.Location = new System.Drawing.Point(14, 387);
             this.txtInitialBalance.Name = "txtInitialBalance";
-            this.txtInitialBalance.Size = new System.Drawing.Size(291, 27);
+            this.txtInitialBalance.Size = new System.Drawing.Size(294, 27);
             this.txtInitialBalance.TabIndex = 5;
             this.txtInitialBalance.TabStop = false;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.txtInitialBalance.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(172)))), ((int)(((byte)(172)))));
@@ -193,7 +193,7 @@
             this.AccentColor = System.Drawing.Color.Gray;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 463);
+            this.ClientSize = new System.Drawing.Size(320, 463);
             this.Controls.Add(this.txtInitialBalance);
             this.Controls.Add(this.separator5);
             this.Controls.Add(this.cmbType);
@@ -217,8 +217,9 @@
             this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateAccount";
+            this.Text = "General Ledger — Create Account";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingEvent);
             this.Load += new System.EventHandler(this.LoadEvent);
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle)).EndInit();

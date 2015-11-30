@@ -50,7 +50,7 @@
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Primary = true;
-            this.btnCreate.Size = new System.Drawing.Size(293, 30);
+            this.btnCreate.Size = new System.Drawing.Size(296, 30);
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.txtTitle.Location = new System.Drawing.Point(14, 98);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(291, 27);
+            this.txtTitle.Size = new System.Drawing.Size(294, 27);
             this.txtTitle.TabIndex = 1;
             this.txtTitle.ThemeName = "Windows8";
             // 
@@ -75,7 +75,7 @@
             this.txtDescription.Location = new System.Drawing.Point(14, 154);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(291, 92);
+            this.txtDescription.Size = new System.Drawing.Size(294, 92);
             this.txtDescription.TabIndex = 2;
             this.txtDescription.ThemeName = "Windows8";
             // 
@@ -87,7 +87,7 @@
             this.separator1.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator1.Location = new System.Drawing.Point(13, 128);
             this.separator1.Name = "separator1";
-            this.separator1.Size = new System.Drawing.Size(292, 23);
+            this.separator1.Size = new System.Drawing.Size(295, 23);
             this.separator1.TabIndex = 0;
             this.separator1.Text = "Description";
             // 
@@ -99,7 +99,7 @@
             this.separator2.Font = new System.Drawing.Font("Segoe UI Semilight", 13F);
             this.separator2.Location = new System.Drawing.Point(14, 72);
             this.separator2.Name = "separator2";
-            this.separator2.Size = new System.Drawing.Size(291, 23);
+            this.separator2.Size = new System.Drawing.Size(294, 23);
             this.separator2.TabIndex = 0;
             this.separator2.Text = "Title";
             // 
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(317, 298);
+            this.ClientSize = new System.Drawing.Size(320, 298);
             this.Controls.Add(this.separator2);
             this.Controls.Add(this.separator1);
             this.Controls.Add(this.txtDescription);

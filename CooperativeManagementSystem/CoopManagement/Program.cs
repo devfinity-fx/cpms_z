@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Microsoft.VisualBasic.ApplicationServices;  // Add reference to Microsoft.VisualBasic!!
+
 
 // remove after
 using CoopManagement.Core;
@@ -11,17 +13,25 @@ using CoopManagement.Models;
 
 namespace CoopManagement
 {
-    static class Program
+    class Program : WindowsFormsApplicationBase
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new testform());
+
+            var App = new Program();
+
+            App.EnableVisualStyles = true;
+            App.ShutdownStyle = ShutdownMode.AfterAllFormsClose;
+            App.MainForm = new Login();
+            App.Run(args);
+            
 
 
             /*
@@ -33,6 +43,7 @@ namespace CoopManagement
                 Console.WriteLine("Username: {0}", usr.Username);
             }
             */
+
 
         }
     }

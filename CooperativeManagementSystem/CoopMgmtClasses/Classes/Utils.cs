@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace CoopManagement.Classes
 {
@@ -39,6 +40,29 @@ namespace CoopManagement.Classes
             return output;
         }
 
+        public static void EscapeKeyHandler(object sender, KeyEventArgs e, Control ctl)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                GetParentForm(ctl).ActiveControl = ctl;
+                e.Handled = e.SuppressKeyPress = true;
+            }
+        }
+
+        public static Form GetParentForm(Control parent)
+        {
+            Form form = parent as Form;
+            if (form != null)
+            {
+                return form;
+            }
+            if (parent != null)
+            {
+                // Walk up the control hierarchy
+                return GetParentForm(parent.Parent);
+            }
+            return null; // Control is not on a Form
+        }
     }
 
     public static class Extensions

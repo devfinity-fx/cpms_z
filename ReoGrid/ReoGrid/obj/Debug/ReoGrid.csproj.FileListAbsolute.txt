@@ -13,7 +13,6 @@ D:\DevBox\ReoGrid\ReoGrid\bin\Debug\unvell.ReoGrid.dll
 D:\DevBox\ReoGrid\ReoGrid\bin\Debug\unvell.ReoGrid.pdb
 D:\DevBox\ReoGrid\ReoGrid\bin\Debug\Antlr3.Runtime.dll
 D:\DevBox\ReoGrid\ReoGrid\bin\Debug\unvell.ReoScript.dll
-D:\DevBox\ReoGrid\ReoGrid\obj\Debug\ReoGrid.csprojResolveAssemblyReference.cache
 D:\DevBox\ReoGrid\ReoGrid\obj\Debug\unvell.ReoGrid.AboutForm.resources
 D:\DevBox\ReoGrid\ReoGrid\obj\Debug\unvell.ReoGrid.Properties.Resources.resources
 D:\DevBox\ReoGrid\ReoGrid\obj\Debug\unvell.ReoGrid.DebugForm.resources

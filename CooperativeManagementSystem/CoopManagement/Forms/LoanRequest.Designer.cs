@@ -1,6 +1,6 @@
-﻿namespace CoopManagement
+﻿namespace CoopManagement.Forms
 {
-    partial class testform
+    partial class LoanRequest
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.swxPanel1 = new SwingWERX.Controls.SwxPanel();
             this.SuspendLayout();
             // 
-            // swxPanel1
-            // 
-            this.swxPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.swxPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.swxPanel1.GradientColor1 = System.Drawing.Color.Snow;
-            this.swxPanel1.GradientColor2 = System.Drawing.Color.Snow;
-            this.swxPanel1.Location = new System.Drawing.Point(2, 64);
-            this.swxPanel1.Name = "swxPanel1";
-            this.swxPanel1.Size = new System.Drawing.Size(716, 473);
-            this.swxPanel1.TabIndex = 0;
-            // 
-            // testform
+            // LoanRequest
             // 
             this.AccentColor = System.Drawing.Color.Gray;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 540);
-            this.Controls.Add(this.swxPanel1);
+            this.ClientSize = new System.Drawing.Size(320, 423);
             this.DarkPrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(69)))), ((int)(((byte)(79)))));
+            this.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.ForeColor = System.Drawing.Color.Snow;
-            this.Name = "testform";
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "LoanRequest";
             this.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "testform";
+            this.Text = "Cash Disbursement — Loan Request";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private SwingWERX.Controls.SwxPanel swxPanel1;
     }
 }

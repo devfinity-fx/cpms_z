@@ -112,5 +112,10 @@ namespace CoopManagement.Forms
                 MessageBox.Show(this, "Please fill up all required fields.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void FormClosingEvent(object sender, FormClosingEventArgs e)
+        {
+            Console.WriteLine("Create Account Closing");
+        }
     }
 }

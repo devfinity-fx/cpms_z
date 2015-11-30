@@ -78,6 +78,13 @@ namespace CoopManagement
                     navButtons[i].Checked = false;
                 }
             }
+            
+            switch(btn.TabIndex)
+            {
+                case 0: contentManager.SelectedPanel = p0_Home; break;
+                case 5: contentManager.SelectedPanel = p5_GeneralLedger; accountsMaintenance.Reload(); break;
+                case 6: contentManager.SelectedPanel = p6_SubsidiaryLedger; memberAccounts1.Reload(); break;
+            }
         }
     }
 }
